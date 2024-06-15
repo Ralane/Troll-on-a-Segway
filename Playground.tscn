@@ -1,48 +1,74 @@
-[gd_scene load_steps=7 format=3 uid="uid://gg5nnw8caoef"]
+[gd_scene load_steps=13 format=3 uid="uid://gg5nnw8caoef"]
 
-[ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_h1eom"]
+[ext_resource type="PackedScene" uid="uid://caj52egc3orsf" path="res://truck.tscn" id="1_dyeq8"]
 [ext_resource type="PackedScene" uid="uid://bwma3fu0sykaa" path="res://segway.tscn" id="2_2f2ls"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="2_t8ggt"]
+[ext_resource type="Resource" path="res://map_data/data.hterrain" id="3_ey75e"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_l3ful"]
+[ext_resource type="Texture2D" uid="uid://2hyiaca2j8bl" path="res://Playground_slot0_albedo_bump.png" id="5_kl55r"]
+[ext_resource type="Texture2D" uid="uid://dcyjfaq5ag0eg" path="res://Playground_slot0_normal_roughness.png" id="6_d8orf"]
+[ext_resource type="PackedScene" uid="uid://8usbueroyga" path="res://multi_gnomes.tscn" id="8_853x6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wsek"]
-albedo_texture = ExtResource("1_h1eom")
-uv1_triplanar = true
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqara"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8fkrq"]
-size = Vector3(5, 1, 7)
-
-[sub_resource type="BoxMesh" id="BoxMesh_8utl2"]
-size = Vector3(5, 1, 7)
+[sub_resource type="Sky" id="Sky_vmkfx"]
+sky_material = SubResource("ProceduralSkyMaterial_yqara")
 
 [sub_resource type="Environment" id="Environment_l26cd"]
+background_mode = 2
+sky = SubResource("Sky_vmkfx")
+
+[sub_resource type="Resource" id="Resource_6c7gv"]
+script = ExtResource("3_l3ful")
+mode = 0
+textures = [[ExtResource("5_kl55r")], [ExtResource("6_d8orf")]]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-use_collision = true
-size = Vector3(1000, 1, 1000)
-material = SubResource("StandardMaterial3D_7wsek")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02391, -5.87868)
-mass = 100.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_8fkrq")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("BoxMesh_8utl2")
+[node name="RigidBody3D" parent="." instance=ExtResource("1_dyeq8")]
 
 [node name="Node3D" parent="." instance=ExtResource("2_2f2ls")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90181, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.16436, 1.35325)
 angular_damp = 22.255
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, -1.91362e-08, 0.975749, 0.218893, 8.53027e-08, 0.218893, -0.975749, 0, 7.10193, -15.714)
+transform = Transform3D(-1, -3.00437e-08, 8.20982e-08, 0, 0.939094, 0.34366, -8.74228e-08, 0.34366, -0.939094, 0, 8.14479, -19.0556)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l26cd")
 
 [node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.84592, -2.07899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4257, -0.9003)
 node_a = NodePath("../RigidBody3D")
 node_b = NodePath("../Node3D")
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("2_t8ggt")
+map_scale = Vector3(10, 10, 10)
+centered = true
+_terrain_data = ExtResource("3_ey75e")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_6c7gv")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="MultiGnomes" parent="." instance=ExtResource("8_853x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88448, 4.95568, -6.07794)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.962819, 0.270147, 0, -0.270147, 0.962819, 3.62848, -39.9641, 217.52)
+use_collision = true
+size = Vector3(107.257, 100, 100)
+
+[node name="MultiGnomes2" parent="." instance=ExtResource("8_853x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5871, 4.95568, -6.07794)

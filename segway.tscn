@@ -1,25 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwma3fu0sykaa"]
+[gd_scene load_steps=9 format=3 uid="uid://bwma3fu0sykaa"]
 
 [ext_resource type="Script" path="res://segway.gd" id="1_q07jy"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4dkf"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_kcdjv"]
+material = SubResource("StandardMaterial3D_f4dkf")
 height = 0.499
-radial_segments = 4
+radial_segments = 6
+rings = 6
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jq2a5"]
 radius = 0.316413
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_roiif"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_exxbg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebpg5"]
+albedo_color = Color(0.945098, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufjwv"]
+albedo_color = Color(0.945098, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mxj3"]
+albedo_color = Color(0.0886615, 0.229049, 0.215731, 1)
 
 [node name="Node3D" type="VehicleBody3D"]
+mass = 100.0
+gravity_scale = 0.6
+angular_damp = 20.081
 script = ExtResource("1_q07jy")
 
 [node name="WheelL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 use_as_traction = true
 use_as_steering = true
+wheel_friction_slip = 12.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WheelL"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -29,6 +45,7 @@ mesh = SubResource("CylinderMesh_kcdjv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 use_as_traction = true
 use_as_steering = true
+wheel_friction_slip = 12.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WheelR"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -42,6 +59,65 @@ shape = SubResource("CapsuleShape3D_jq2a5")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.361237, 0)
 shape = SubResource("CapsuleShape3D_roiif")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43506, 0)
-mesh = SubResource("CapsuleMesh_exxbg")
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0412598, 0.245417, 0)
+size = Vector3(1.7749, 0.108887, 1)
+material = SubResource("StandardMaterial3D_ebpg5")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.98376, 0.179489, 0, -0.179489, 0.98376, 0.0412598, 0.911887, 0.276556)
+radius = 0.121246
+material = SubResource("StandardMaterial3D_ufjwv")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D/CSGCylinder3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 1.02774, 0.0168757)
+radius = 0.115746
+height = 1.79496
+material = SubResource("StandardMaterial3D_ufjwv")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.70878, -1.0673)
+size = Vector3(0.665, 0.615, 0.409058)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.780305, 0)
+size = Vector3(1.165, 1, 1)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.573862, 0.818952, 0, -0.818952, 0.573862, 0.597605, -0.104057, 0.385257)
+size = Vector3(0.282104, 1.69232, 0.206177)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.573862, 0.818952, 0, -0.818952, 0.573862, -0.598, -0.104, 0.385)
+size = Vector3(0.282104, 1.69232, 0.206177)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(0.986532, -0.153236, -0.0572102, 0.163567, 0.92422, 0.345055, 0, -0.349766, 0.936837, -0.40194, -1.496, 0.155)
+size = Vector3(0.104187, 2.27295, 0.174316)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(0.97931, 0.194084, -0.0572936, -0.162968, 0.924235, 0.345298, 0.11997, -0.328817, 0.936743, 0.306084, -1.496, 0.155)
+size = Vector3(0.104187, 2.27295, 0.174316)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.894669, 0.446729, 0, -0.446729, 0.894669, 0.264639, 0.351178, -0.0934926)
+size = Vector3(0.135723, 0.402104, 0.21283)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.894669, 0.446729, 0, -0.446729, 0.894669, -0.265, 0.351, -0.093)
+size = Vector3(0.135723, 0.402104, 0.21283)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.999301, 0.0373762, 0, -0.0373762, -0.999301, 0, 1.40928, 0.776563)
+spot_range = 24.6222
+spot_angle = 31.539
