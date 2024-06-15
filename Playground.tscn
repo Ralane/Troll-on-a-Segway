@@ -20,6 +20,12 @@ sky_material = SubResource("ProceduralSkyMaterial_yqara")
 [sub_resource type="Environment" id="Environment_l26cd"]
 background_mode = 2
 sky = SubResource("Sky_vmkfx")
+ambient_light_source = 3
+ambient_light_color = Color(0.867557, 0.925026, 0.98374, 1)
+ambient_light_sky_contribution = 0.98
+ambient_light_energy = 5.65
+reflected_light_source = 2
+tonemap_exposure = 0.49
 
 [sub_resource type="Resource" id="Resource_6c7gv"]
 script = ExtResource("3_l3ful")
@@ -30,6 +36,10 @@ textures = [[ExtResource("5_kl55r")], [ExtResource("6_d8orf")]]
 Label/colors/font_outline_color = Color(0.948977, 0.891999, 0.856433, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="RigidBody3D" parent="." instance=ExtResource("1_dyeq8")]
 
