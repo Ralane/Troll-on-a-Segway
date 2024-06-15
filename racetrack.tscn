@@ -113,25 +113,13 @@ material = SubResource("StandardMaterial3D_ftmo2")
 transform = Transform3D(0.999351, 0, -0.0360155, 0, 1, 0, 0.0360155, 0, 0.999351, -319.167, 0, 1044.32)
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -105.939, 0, 546.951)
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -93.1564, 0, 547.181)
 use_collision = true
-size = Vector3(263.357, 1, 85.6389)
+size = Vector3(237.788, 1, 85.6389)
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="SpinnyBoi" parent="." instance=ExtResource("2_ymb5n")]
 transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -148.68, 0, 1069.6)
-
-[node name="CSGBox3D18" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 70.4836, -16.8372, 548.254)
-use_collision = true
-size = Vector3(243.514, 1, 70.3967)
-material = SubResource("StandardMaterial3D_ftmo2")
-
-[node name="CSGBox3D19" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 261.904, -49.3315, 517.77)
-use_collision = true
-size = Vector3(354.506, 1, 99.2211)
-material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="SpinnyBoi3" parent="." instance=ExtResource("2_ymb5n")]
 transform = Transform3D(0.999351, 0, -0.0360155, 0, 1, 0, 0.0360155, 0, 0.999351, -512.65, 0.800652, 485.416)
@@ -180,4 +168,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54581, 20.9862, 0)
 size = Vector3(48.835, 1.34885, 1)
 
 [node name="PlatformerSlide2" parent="." instance=ExtResource("3_eljse")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -269.249, 0.307726, 547.215)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -251.228, 0.307726, 522.238)
+
+[node name="CSGTorus3D2" type="CSGTorus3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -2.35167e-07, -1, 0, 5.38, -4.37114e-08, 248.068, 157.535, 546.065)
+use_collision = true
+inner_radius = 190.885
+outer_radius = 213.34
+sides = 64
+ring_sides = 5
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGTorus3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -1.0985e-11, 1, 38.4615, -0.74894, -68.1153)
+operation = 2
+size = Vector3(782.191, 63.4044, 451.837)
