@@ -25,7 +25,7 @@ albedo_color = Color(0.0886615, 0.229049, 0.215731, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jq2a5"]
 radius = 0.84304
-height = 3.93819
+height = 2.82098
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufjwv"]
 albedo_color = Color(0.945098, 0, 0, 1)
@@ -43,7 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0199523, 0)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 200.0
-angular_damp = 1.0
 script = ExtResource("1_q07jy")
 
 [node name="WheelL" type="VehicleWheel3D" parent="."]
@@ -152,7 +151,7 @@ size = Vector3(0.135723, 0.402104, 0.21283)
 material = SubResource("StandardMaterial3D_8mxj3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGCombiner3D/TrollBody"]
-transform = Transform3D(-4.37114e-08, -0.98376, 0.179489, 1, -4.30015e-08, 7.84572e-09, 0, 0.179489, 0.98376, -0.136432, -5.96365e-09, -0.939809)
+transform = Transform3D(-4.37114e-08, -0.98376, 0.179489, 1, -4.30015e-08, 7.84572e-09, 0, 0.179489, 0.98376, -1.0516, -4.59671e-08, -1.06077)
 shape = SubResource("CapsuleShape3D_jq2a5")
 
 [node name="SteeringStick" type="CSGCylinder3D" parent="CSGCombiner3D"]
