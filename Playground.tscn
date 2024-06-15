@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://gg5nnw8caoef"]
+[gd_scene load_steps=17 format=3 uid="uid://gg5nnw8caoef"]
 
 [ext_resource type="PackedScene" uid="uid://caj52egc3orsf" path="res://truck.tscn" id="1_dyeq8"]
 [ext_resource type="PackedScene" uid="uid://bwma3fu0sykaa" path="res://segway.tscn" id="2_2f2ls"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://8usbueroyga" path="res://multi_gnomes.tscn" id="8_853x6"]
 [ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="9_tixp3"]
 [ext_resource type="PackedScene" uid="uid://duv3pg8ieo0v5" path="res://racetrack.tscn" id="10_8ei8w"]
+[ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="11_sg01e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqara"]
 
@@ -107,3 +108,7 @@ lines = Array[String](["wasd control zoom scooter", "u r stronk troll", "brimg c
 
 [node name="Node3D2" parent="." instance=ExtResource("10_8ei8w")]
 transform = Transform3D(-0.0633827, 0, 0.997989, 0, 1, 0, -0.997989, 0, -0.0633827, 0, 0.208234, 11.4001)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_sg01e")
+autoplay = true
