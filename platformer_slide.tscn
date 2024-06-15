@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dweo4w4cci1y2"]
+
+[ext_resource type="Script" path="res://PlatformerSlide.gd" id="1_1dr34"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4rwjs"]
+rough = true
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_27aw8"]
+size = Vector3(24, 1, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2mo8"]
+size = Vector3(24, 1, 1.11847)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wm2n7"]
+size = Vector3(24, 1, 24)
+
+[node name="PlatformerSlide" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7461)
+physics_material_override = SubResource("PhysicsMaterial_4rwjs")
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_1dr34")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_27aw8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.950456, -0.310859, 0, 0.310859, 0.950456, 0, -0.151584, 12.3571)
+shape = SubResource("BoxShape3D_y2mo8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-1, -2.71602e-08, -8.30967e-08, 0, 0.950516, -0.310676, 8.74228e-08, -0.310676, -0.950516, 0, -0.152, -12.357)
+shape = SubResource("BoxShape3D_y2mo8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_wm2n7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.47775, -11.8576)
+size = Vector3(1, 18.0562, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.3779, 5.21169)
+size = Vector3(1, 1, 11.4234)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0.310859, 0.950456, 0, 0.950456, -0.310859, -1, -1.35881e-08, -4.15458e-08, 12.357, -0.151584, -0.0239112)
+shape = SubResource("BoxShape3D_y2mo8")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, -0.310676, 0.950516, 0, 0.950516, 0.310676, -1, 1.35801e-08, -4.15484e-08, -12.357, -0.152, 0.0239675)
+shape = SubResource("BoxShape3D_y2mo8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.7444, 0)
+size = Vector3(64, 1, 1)

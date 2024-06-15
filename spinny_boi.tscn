@@ -20,6 +20,14 @@ size = Vector3(30, 10, 1)
 [node name="SpinnyBoi" type="Node3D"]
 transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -148.68, 0, 525.254)
 
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(1, 1.30385e-08, -7.77156e-16, 0, -4.37114e-08, -1, -1.30385e-08, 1, -4.37114e-08, 139.119, 1.88582, -527.121)
+node_a = NodePath("../RigidBody3D2")
+node_b = NodePath("../RigidBody3D")
+motor/enable = true
+motor/target_velocity = 0.453786
+motor/max_impulse = 80.0
+
 [node name="RigidBody3D2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 1.11759e-08, 0, 1, 0, -1.11759e-08, 0, 1, 138.872, 1.62659, -527.455)
 mass = 100.0
@@ -29,21 +37,13 @@ freeze = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.11056, 0)
 shape = SubResource("CapsuleShape3D_oy48j")
 
-[node name="HingeJoint3D" type="HingeJoint3D" parent="RigidBody3D2"]
-transform = Transform3D(1, 0, -2.22045e-16, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.246712, 0.259234, 0.33378)
-node_a = NodePath("..")
-node_b = NodePath("../../RigidBody3D")
-motor/enable = true
-motor/target_velocity = 0.482234
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.608566, 0)
 mesh = SubResource("CapsuleMesh_8523v")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(0.999838, 0, 0.0180107, 0, 1, 0, -0.0180107, 0, 0.999838, 138.967, 6.89243, -527.493)
-mass = 50.0
-constant_torque = Vector3(0, 52.94, 0)
+mass = 25.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_e20j6")
