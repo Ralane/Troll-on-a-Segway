@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://clj8vxclpwva1"]
+
+[ext_resource type="PackedScene" uid="uid://caj52egc3orsf" path="res://truck.tscn" id="1_sfhkf"]
+[ext_resource type="PackedScene" uid="uid://bwma3fu0sykaa" path="res://segway.tscn" id="2_83k7x"]
+[ext_resource type="PackedScene" uid="uid://8usbueroyga" path="res://multi_gnomes.tscn" id="3_53ejr"]
+
+[node name="TrollCart" type="Node3D"]
+
+[node name="RigidBody3D" parent="." instance=ExtResource("1_sfhkf")]
+
+[node name="Node3D" parent="." instance=ExtResource("2_83k7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46492, 3.20153)
+angular_damp = 22.255
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63486, 0.27065)
+node_a = NodePath("../RigidBody3D")
+node_b = NodePath("../Node3D")
+
+[node name="MultiGnomes" parent="." instance=ExtResource("3_53ejr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88448, 4.13068, -6.07794)
+
+[node name="MultiGnomes2" parent="." instance=ExtResource("3_53ejr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5871, 4.13068, -6.07794)

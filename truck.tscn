@@ -104,7 +104,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt88j"]
-size = Vector3(5.04437, 3.50098, 6.67346)
+size = Vector3(5.04437, 17.3519, 6.67346)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8qx11"]
 rough = true
@@ -223,7 +223,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="BabyCounter"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125824, 1.25049, -0.23175)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125824, 8.17596, -0.23175)
 shape = SubResource("BoxShape3D_dt88j")
 
 [node name="BabiesOnBoard" type="Label3D" parent="."]

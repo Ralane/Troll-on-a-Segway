@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://df2g2xcjrpb25"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_k0gxn"]
+[ext_resource type="Resource" path="res://map_data/data.hterrain" id="2_8td2j"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_qkfst"]
+[ext_resource type="Texture2D" uid="uid://2hyiaca2j8bl" path="res://Playground_slot0_albedo_bump.png" id="4_d3c8h"]
+[ext_resource type="Texture2D" uid="uid://dcyjfaq5ag0eg" path="res://Playground_slot0_normal_roughness.png" id="5_miko1"]
+[ext_resource type="Texture2D" uid="uid://bwtu6g4cu513w" path="res://tree.png" id="6_03iva"]
+
+[sub_resource type="Resource" id="Resource_5q6ix"]
+script = ExtResource("3_qkfst")
+mode = 0
+textures = [[ExtResource("4_d3c8h")], [ExtResource("5_miko1")]]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_issk1"]
+transparency = 1
+albedo_texture = ExtResource("6_03iva")
+uv1_scale = Vector3(0.01, 0.01, 0.01)
+uv1_offset = Vector3(0, 0.43, 0)
+uv1_triplanar = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_if1ep"]
+radius = 35.013
+
+[node name="ForestRacetrack" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -255.57, 0)
+script = ExtResource("1_k0gxn")
+map_scale = Vector3(10, 10, 3.41)
+centered = true
+_terrain_data = ExtResource("2_8td2j")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_5q6ix")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -416.096, -216.397, 48.7805)
+use_collision = true
+size = Vector3(932.192, 110.982, 2.43903)
+material = SubResource("StandardMaterial3D_issk1")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -416.096, -216.397, 311.625)
+use_collision = true
+size = Vector3(932.192, 110.982, 2.43903)
+material = SubResource("StandardMaterial3D_issk1")
+
+[node name="Checkpoint" type="Area3D" parent="."]
+transform = Transform3D(0.0377076, 0, -0.999289, 0, 1, 0, 0.999289, 0, 0.0377076, -361.055, -256.659, 179.543)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint"]
+shape = SubResource("SphereShape3D_if1ep")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3717, 10.5803, 0)
+size = Vector3(1, 22.1606, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4435, 10.5803, 0)
+size = Vector3(1, 22.1606, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54581, 20.9862, 0)
+size = Vector3(48.835, 1.34885, 1)
