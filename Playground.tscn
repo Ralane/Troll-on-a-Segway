@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://gg5nnw8caoef"]
+[gd_scene load_steps=11 format=3 uid="uid://gg5nnw8caoef"]
 
+[ext_resource type="FontFile" uid="uid://d1q1ussl3lsbg" path="res://fonts/rocketfuel/RocketFuel.otf" id="1_kpgt8"]
 [ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="4_nsmu3"]
 [ext_resource type="PackedScene" uid="uid://df2g2xcjrpb25" path="res://forest_racetrack.tscn" id="5_dqmuk"]
 [ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="9_tixp3"]
@@ -25,6 +26,7 @@ sky = SubResource("Sky_vmkfx")
 
 [sub_resource type="Theme" id="Theme_u732a"]
 Label/colors/font_outline_color = Color(0.948977, 0.891999, 0.856433, 1)
+Label/fonts/font = ExtResource("1_kpgt8")
 
 [node name="Node3D" type="Node3D"]
 
@@ -50,7 +52,7 @@ size_flags_horizontal = 3
 
 [node name="Marquee" type="Control" parent="Control/Panel"]
 clip_contents = true
-custom_minimum_size = Vector2(244, 23)
+custom_minimum_size = Vector2(272, 17)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +62,7 @@ grow_vertical = 2
 theme = SubResource("Theme_u732a")
 script = ExtResource("9_tixp3")
 delay = 4.0
-lines = Array[String](["wasd control zoom scooter", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd make segway move", "cart full of babis trols", "carful not kil babis", "7y80[9hnhy80[", "ow hurt face on key bord", "ignor last messag", "troll face stronkt beats keebord", "wasd move scooter", "baby trolls need go home", "bring babie trolls home pleaz", "thank you"])
+lines = Array[String](["wasd     control       zoom         scooter", "bab y      trolls         need     go   home", "u       r        stronk      troll", "brimg       changelins       to       bilding", "troll         togeder         stronk", "wasd         make        segway        move", "cart      full      of      babis          trols", "carful           not           kil           babis", "7y80[9hnhy80[", "ow            hurt         face       on      key        bord", "ignor last messag", "wasd         move         scooter", "bring        babie      trolls       h ome        pleaz"])
 
 [node name="Racetrack" parent="." instance=ExtResource("10_8ei8w")]
 transform = Transform3D(-0.0633827, 0, 0.997989, 0, 1, 0, -0.997989, 0, -0.0633827, 0, 0.208234, 11.4001)
