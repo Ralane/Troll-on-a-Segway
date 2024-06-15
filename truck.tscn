@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://caj52egc3orsf"]
+[gd_scene load_steps=24 format=3 uid="uid://caj52egc3orsf"]
 
 [ext_resource type="Script" path="res://truck.gd" id="1_j4mqy"]
+[ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="2_voiyb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8fkrq"]
 size = Vector3(5, 1, 7)
@@ -125,6 +126,9 @@ height = 0.499
 radial_segments = 6
 rings = 6
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25dea"]
+albedo_texture = ExtResource("2_voiyb")
+
 [node name="Truck" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02391, -5.87868)
 mass = 25.0
@@ -147,7 +151,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842699, -3.22897)
 shape = SubResource("BoxShape3D_vc87m")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.99426, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07433, 0)
 light_color = Color(1, 0.419608, 1, 1)
 omni_range = 4.565
 
@@ -176,7 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31814, 0.810681, 0)
 mesh = SubResource("BoxMesh_70ubw")
 
 [node name="MultiGnomeSpawner" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.62411, 1.35604)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489665, 1.35604)
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
@@ -262,5 +266,10 @@ mesh = SubResource("CylinderMesh_wy6w5")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 0)
 node_a = NodePath("..")
 node_b = NodePath("../WheelL")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299955, 4.24158)
+size = Vector3(0.14, 0.025, 3.725)
+material = SubResource("StandardMaterial3D_25dea")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
