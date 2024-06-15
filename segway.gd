@@ -2,7 +2,7 @@ extends VehicleBody3D
 
 var horsepower = 1600
 
-var steer_limit = deg_to_rad(35)
+var steer_limit = deg_to_rad(45)
 
 @onready var steeringStickModel = $CSGCombiner3D/SteeringStick;
 @onready var raycast3D = $RayCast3D;
@@ -14,4 +14,5 @@ func _physics_process(delta):
 	var turn_input = Input.get_action_strength("steer_left") -  Input.get_action_strength("steer_right")
 	steering = lerpf(steering, turn_input * steer_limit, delta * 2);
 
+	$CameraFollower.rotation_degrees.y = steering * 45;
 	steeringStickModel.rotation_degrees.y = steering * 45	

@@ -12,10 +12,6 @@ height = 0.499
 radial_segments = 6
 rings = 6
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jq2a5"]
-radius = 0.84304
-height = 3.93819
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_roiif"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebpg5"]
@@ -24,11 +20,15 @@ albedo_color = Color(0.945098, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0nbjp"]
 albedo_texture = ExtResource("2_vx0df")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufjwv"]
-albedo_color = Color(0.945098, 0, 0, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mxj3"]
 albedo_color = Color(0.0886615, 0.229049, 0.215731, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jq2a5"]
+radius = 0.84304
+height = 3.93819
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufjwv"]
+albedo_color = Color(0.945098, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_lxmqv"]
 resource_name = "RESET"
@@ -76,13 +76,14 @@ suspension_stiffness = 60.0
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_kcdjv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13691, -0.840345)
-shape = SubResource("CapsuleShape3D_jq2a5")
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.361237, 0)
 shape = SubResource("CapsuleShape3D_roiif")
+
+[node name="CameraFollower" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraFollower"]
+transform = Transform3D(-1, -3.00437e-08, 8.20982e-08, -1.56914e-08, 0.985526, 0.169522, -8.6003e-08, 0.169522, -0.985526, 0, 6.87454, -24.4648)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 
@@ -96,6 +97,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0443726, -1.4857)
 size = Vector3(0.14, 0.025, 2.99922)
 material = SubResource("StandardMaterial3D_0nbjp")
 
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.98376, -4.30015e-08, 0.179489, 0.179489, 7.84572e-09, 0.98376, 0, 2.17138, 0.10869)
+node_a = NodePath("../TrollBody")
+node_b = NodePath("../SteeringStick/StaticBody3D")
+linear_spring_x/enabled = true
+linear_spring_y/enabled = true
+linear_spring_z/enabled = true
+angular_spring_x/enabled = true
+angular_spring_y/enabled = true
+angular_spring_z/enabled = true
+
+[node name="TrollBody" type="RigidBody3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.98376, -4.30015e-08, 0.179489, 0.179489, 7.84572e-09, 0.98376, 0, 2.17138, 0.10869)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/TrollBody"]
+transform = Transform3D(-4.37114e-08, -0.98376, 0.179489, 1, -4.30015e-08, 7.84571e-09, 8.88178e-16, 0.179489, 0.98376, -1.72351, -7.53368e-08, -0.880949)
+size = Vector3(0.665, 0.615, 0.409058)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.780305, 0)
+size = Vector3(1.165, 1, 1)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.573862, 0.818952, 0, -0.818952, 0.573862, 0.597605, -0.104057, 0.385257)
+size = Vector3(0.282104, 1.69232, 0.206177)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.573862, 0.818952, 0, -0.818952, 0.573862, -0.598, -0.104, 0.385)
+size = Vector3(0.282104, 1.69232, 0.206177)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(0.986532, -0.153236, -0.0572102, 0.163567, 0.92422, 0.345055, 0, -0.349766, 0.936837, -0.40194, -1.496, 0.155)
+size = Vector3(0.104187, 2.27295, 0.174316)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(0.97931, 0.194084, -0.0572936, -0.162968, 0.924235, 0.345298, 0.11997, -0.328817, 0.936743, 0.306084, -1.496, 0.155)
+size = Vector3(0.104187, 2.27295, 0.174316)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.894669, 0.446729, 0, -0.446729, 0.894669, 0.264639, 0.351178, -0.0934926)
+size = Vector3(0.135723, 0.402104, 0.21283)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.894669, 0.446729, 0, -0.446729, 0.894669, -0.265, 0.351, -0.093)
+size = Vector3(0.135723, 0.402104, 0.21283)
+material = SubResource("StandardMaterial3D_8mxj3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGCombiner3D/TrollBody"]
+transform = Transform3D(-4.37114e-08, -0.98376, 0.179489, 1, -4.30015e-08, 7.84572e-09, 0, 0.179489, 0.98376, -0.136432, -5.96365e-09, -0.939809)
+shape = SubResource("CapsuleShape3D_jq2a5")
+
 [node name="SteeringStick" type="CSGCylinder3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.98376, 0.179489, 0, -0.179489, 0.98376, 0, 1.1573, 0.276556)
 radius = 0.121246
@@ -107,48 +166,7 @@ radius = 0.115746
 height = 1.79496
 material = SubResource("StandardMaterial3D_ufjwv")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/SteeringStick/CSGCylinder3D2"]
-transform = Transform3D(-4.37114e-08, -0.98376, 0.179489, 1, -4.30015e-08, 7.84571e-09, 8.88178e-16, 0.179489, 0.98376, -1.72351, -7.53368e-08, -0.880949)
-size = Vector3(0.665, 0.615, 0.409058)
-material = SubResource("StandardMaterial3D_8mxj3")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/SteeringStick/CSGCylinder3D2/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.780305, 0)
-size = Vector3(1.165, 1, 1)
-material = SubResource("StandardMaterial3D_8mxj3")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/SteeringStick/CSGCylinder3D2/CSGBox3D2/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 0.573862, 0.818952, 0, -0.818952, 0.573862, 0.597605, -0.104057, 0.385257)
-size = Vector3(0.282104, 1.69232, 0.206177)
-material = SubResource("StandardMaterial3D_8mxj3")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/SteeringStick/CSGCylinder3D2/CSGBox3D2/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 0.573862, 0.818952, 0, -0.818952, 0.573862, -0.598, -0.104, 0.385)
-size = Vector3(0.282104, 1.69232, 0.206177)
-material = SubResource("StandardMaterial3D_8mxj3")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/SteeringStick/CSGCylinder3D2/CSGBox3D2/CSGBox3D"]
-transform = Transform3D(0.986532, -0.153236, -0.0572102, 0.163567, 0.92422, 0.345055, 0, -0.349766, 0.936837, -0.40194, -1.496, 0.155)
-size = Vector3(0.104187, 2.27295, 0.174316)
-material = SubResource("StandardMaterial3D_8mxj3")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/SteeringStick/CSGCylinder3D2/CSGBox3D2/CSGBox3D"]
-transform = Transform3D(0.97931, 0.194084, -0.0572936, -0.162968, 0.924235, 0.345298, 0.11997, -0.328817, 0.936743, 0.306084, -1.496, 0.155)
-size = Vector3(0.104187, 2.27295, 0.174316)
-material = SubResource("StandardMaterial3D_8mxj3")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/SteeringStick/CSGCylinder3D2/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 0.894669, 0.446729, 0, -0.446729, 0.894669, 0.264639, 0.351178, -0.0934926)
-size = Vector3(0.135723, 0.402104, 0.21283)
-material = SubResource("StandardMaterial3D_8mxj3")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/SteeringStick/CSGCylinder3D2/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 0.894669, 0.446729, 0, -0.446729, 0.894669, -0.265, 0.351, -0.093)
-size = Vector3(0.135723, 0.402104, 0.21283)
-material = SubResource("StandardMaterial3D_8mxj3")
-
-[node name="Camera3D" type="Camera3D" parent="CSGCombiner3D/SteeringStick"]
-transform = Transform3D(-1, -3.00437e-08, 8.20982e-08, 3.55271e-15, 0.939094, 0.34366, -8.74228e-08, 0.34366, -0.939094, 0, 10.0652, -23.3134)
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGCombiner3D/SteeringStick"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.999301, 0.0373762, 0, -0.0373762, -0.999301, 0, 1.40928, 0.776563)

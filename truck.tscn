@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://caj52egc3orsf"]
+[gd_scene load_steps=26 format=3 uid="uid://caj52egc3orsf"]
 
 [ext_resource type="Script" path="res://truck.gd" id="1_j4mqy"]
 [ext_resource type="FontFile" uid="uid://d1q1ussl3lsbg" path="res://fonts/rocketfuel/RocketFuel.otf" id="2_5n731"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="2_voiyb"]
+[ext_resource type="FontFile" uid="uid://bvraukf260twf" path="res://fonts/bybsy/bybsy-regular-webfont.ttf" id="3_1h8o6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8fkrq"]
 size = Vector3(5, 1, 7)
@@ -230,9 +231,9 @@ shape = SubResource("BoxShape3D_dt88j")
 
 [node name="BabiesOnBoard" type="Label3D" parent="."]
 transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0, 0.864692, -3.73031)
-text = "Babis     on     bord:
+text = "babis on bord:
 0"
-font = ExtResource("2_5n731")
+font = ExtResource("3_1h8o6")
 
 [node name="WheelR" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
