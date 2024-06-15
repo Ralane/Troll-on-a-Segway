@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwma3fu0sykaa"]
+[gd_scene load_steps=13 format=3 uid="uid://bwma3fu0sykaa"]
 
 [ext_resource type="Script" path="res://segway.gd" id="1_q07jy"]
+[ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="2_vx0df"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egnib"]
 albedo_color = Color(0, 0, 0, 1)
@@ -18,6 +19,9 @@ radius = 0.316413
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebpg5"]
 albedo_color = Color(0.945098, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0nbjp"]
+albedo_texture = ExtResource("2_vx0df")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufjwv"]
 albedo_color = Color(0.945098, 0, 0, 1)
@@ -78,6 +82,11 @@ shape = SubResource("CapsuleShape3D_roiif")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0412598, 0.245417, 0)
 size = Vector3(1.7749, 0.108887, 1)
 material = SubResource("StandardMaterial3D_ebpg5")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0443726, -1.4857)
+size = Vector3(0.14, 0.025, 2.99922)
+material = SubResource("StandardMaterial3D_0nbjp")
 
 [node name="SteeringStick" type="CSGCylinder3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.98376, 0.179489, 0, -0.179489, 0.98376, 0, 1.1573, 0.276556)

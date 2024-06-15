@@ -11,6 +11,6 @@ func _physics_process(delta):
 	engine_force = lerpf(engine_force, move_input * horsepower, delta * 10);
 
 	var turn_input = Input.get_action_strength("steer_left") -  Input.get_action_strength("steer_right")
-	steering = lerpf(steering, turn_input * steer_limit, delta * 10);
+	steering = lerpf(steering, turn_input * steer_limit, delta * 2);
 
 	steeringStickModel.rotation_degrees.y = steering * 45	
