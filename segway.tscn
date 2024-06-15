@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://segway.gd" id="1_q07jy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4dkf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egnib"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_kcdjv"]
-material = SubResource("StandardMaterial3D_f4dkf")
+material = SubResource("StandardMaterial3D_egnib")
 height = 0.499
 radial_segments = 6
 rings = 6
@@ -26,16 +26,16 @@ albedo_color = Color(0.945098, 0, 0, 1)
 albedo_color = Color(0.0886615, 0.229049, 0.215731, 1)
 
 [node name="Node3D" type="VehicleBody3D"]
-mass = 100.0
-gravity_scale = 0.6
-angular_damp = 20.081
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0199523, 0)
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 200.0
 script = ExtResource("1_q07jy")
 
 [node name="WheelL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 use_as_traction = true
 use_as_steering = true
-wheel_friction_slip = 12.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WheelL"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -45,7 +45,6 @@ mesh = SubResource("CylinderMesh_kcdjv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 use_as_traction = true
 use_as_steering = true
-wheel_friction_slip = 12.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WheelR"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -119,5 +118,6 @@ material = SubResource("StandardMaterial3D_8mxj3")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.999301, 0.0373762, 0, -0.0373762, -0.999301, 0, 1.40928, 0.776563)
-spot_range = 24.6222
+light_energy = 1.428
+spot_range = 34.785
 spot_angle = 31.539
