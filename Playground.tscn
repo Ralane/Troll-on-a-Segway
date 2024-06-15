@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://gg5nnw8caoef"]
+
+[ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_h1eom"]
+[ext_resource type="PackedScene" uid="uid://bwma3fu0sykaa" path="res://segway.tscn" id="2_2f2ls"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wsek"]
+albedo_texture = ExtResource("1_h1eom")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fkrq"]
+size = Vector3(5, 1, 7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8utl2"]
+size = Vector3(5, 1, 7)
+
+[sub_resource type="Environment" id="Environment_l26cd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(1000, 1, 1000)
+material = SubResource("StandardMaterial3D_7wsek")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02391, -5.87868)
+mass = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_8fkrq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_8utl2")
+
+[node name="Node3D" parent="." instance=ExtResource("2_2f2ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90181, 0)
+angular_damp = 22.255
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, -1.91362e-08, 0.975749, 0.218893, 8.53027e-08, 0.218893, -0.975749, 0, 7.10193, -15.714)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l26cd")
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.84592, -2.07899)
+node_a = NodePath("../RigidBody3D")
+node_b = NodePath("../Node3D")
