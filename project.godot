@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="GodotWildJamJune24"
+config/name="Troll on a Segway"
 run/main_scene="res://Playground.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/marquee/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [input]
 

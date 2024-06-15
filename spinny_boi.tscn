@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cws60xsxx84fo"]
+
+[ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_0o1ah"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oy48j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftmo2"]
+albedo_texture = ExtResource("1_0o1ah")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8523v"]
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e20j6"]
+size = Vector3(22, 10, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f8uqj"]
+material = SubResource("StandardMaterial3D_ftmo2")
+size = Vector3(22, 10, 1)
+
+[node name="SpinnyBoi" type="Node3D"]
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -148.68, 0, 525.254)
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5066, 1.62659, -545.729)
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.11056, 0)
+shape = SubResource("CapsuleShape3D_oy48j")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, -2.22045e-16, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.246712, 0.259234, 0.33378)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody3D")
+motor/enable = true
+motor/target_velocity = 0.482234
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.608566, 0)
+mesh = SubResource("CapsuleMesh_8523v")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(0.999838, 0, 0.0180107, 0, 1, 0, -0.0180107, 0, 0.999838, 38.6011, 6.89243, -545.767)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_e20j6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_f8uqj")

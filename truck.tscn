@@ -1,21 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://caj52egc3orsf"]
+[gd_scene load_steps=10 format=3 uid="uid://caj52egc3orsf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8fkrq"]
 size = Vector3(5, 1, 7)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8m3w"]
+albedo_color = Color(0.693179, 0.444197, 5.77569e-07, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_8utl2"]
+material = SubResource("StandardMaterial3D_i8m3w")
 size = Vector3(5, 1, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vc87m"]
 size = Vector3(5, 1.43359, 0.502686)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojvq2"]
+albedo_color = Color(0.693179, 0.444197, 5.77569e-07, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_wivv0"]
+material = SubResource("StandardMaterial3D_ojvq2")
 size = Vector3(5, 1, 0.62)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xeo6s"]
 size = Vector3(0.578125, 1, 7)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjlgl"]
+albedo_color = Color(0.693179, 0.444197, 5.77569e-07, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_70ubw"]
+material = SubResource("StandardMaterial3D_qjlgl")
 size = Vector3(0.475, 1, 7)
 
 [node name="RigidBody3D" type="RigidBody3D"]

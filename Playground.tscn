@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://gg5nnw8caoef"]
+[gd_scene load_steps=16 format=3 uid="uid://gg5nnw8caoef"]
 
 [ext_resource type="PackedScene" uid="uid://caj52egc3orsf" path="res://truck.tscn" id="1_dyeq8"]
 [ext_resource type="PackedScene" uid="uid://bwma3fu0sykaa" path="res://segway.tscn" id="2_2f2ls"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://2hyiaca2j8bl" path="res://Playground_slot0_albedo_bump.png" id="5_kl55r"]
 [ext_resource type="Texture2D" uid="uid://dcyjfaq5ag0eg" path="res://Playground_slot0_normal_roughness.png" id="6_d8orf"]
 [ext_resource type="PackedScene" uid="uid://8usbueroyga" path="res://multi_gnomes.tscn" id="8_853x6"]
+[ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="9_tixp3"]
+[ext_resource type="PackedScene" uid="uid://duv3pg8ieo0v5" path="res://racetrack.tscn" id="10_8ei8w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqara"]
 
@@ -22,6 +24,9 @@ sky = SubResource("Sky_vmkfx")
 script = ExtResource("3_l3ful")
 mode = 0
 textures = [[ExtResource("5_kl55r")], [ExtResource("6_d8orf")]]
+
+[sub_resource type="Theme" id="Theme_u732a"]
+Label/colors/font_outline_color = Color(0.948977, 0.891999, 0.856433, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -43,6 +48,7 @@ node_a = NodePath("../RigidBody3D")
 node_b = NodePath("../Node3D")
 
 [node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -128.5, 0)
 script = ExtResource("2_t8ggt")
 map_scale = Vector3(10, 10, 10)
 centered = true
@@ -65,10 +71,39 @@ shader_params/u_tile_reduction = null
 [node name="MultiGnomes" parent="." instance=ExtResource("8_853x6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88448, 4.95568, -6.07794)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.962819, 0.270147, 0, -0.270147, 0.962819, 3.62848, -39.9641, 217.52)
-use_collision = true
-size = Vector3(107.257, 100, 100)
-
 [node name="MultiGnomes2" parent="." instance=ExtResource("8_853x6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5871, 4.95568, -6.07794)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="Marquee" type="Control" parent="Control/Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(244, 23)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u732a")
+script = ExtResource("9_tixp3")
+delay = 4.0
+lines = Array[String](["wasd control zoom scooter", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd make segway move", "cart full of babis trols", "carful not kil babis", "7y80[9hnhy80[", "ow hurt face on key bord", "ignor last messag", "troll face stronkt beats keebord", "wasd move scooter", "baby trolls need go home", "bring babie trolls home pleaz", "thank you"])
+
+[node name="Node3D2" parent="." instance=ExtResource("10_8ei8w")]
+transform = Transform3D(-0.0633827, 0, 0.997989, 0, 1, 0, -0.997989, 0, -0.0633827, 0, 0.208234, 11.4001)

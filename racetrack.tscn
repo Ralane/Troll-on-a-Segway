@@ -1,0 +1,136 @@
+[gd_scene load_steps=4 format=3 uid="uid://duv3pg8ieo0v5"]
+
+[ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_aw1gl"]
+[ext_resource type="PackedScene" uid="uid://cws60xsxx84fo" path="res://spinny_boi.tscn" id="2_ymb5n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftmo2"]
+albedo_texture = ExtResource("1_aw1gl")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4844, 0, -0.0152588)
+use_collision = true
+size = Vector3(71.9688, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.892034, 0, -0.451968, 0, 1, 0, 0.451968, 0, 0.892034, -82.9428, 0, -7.64344)
+use_collision = true
+size = Vector3(38.9395, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.548746, 0, -0.835989, 0, 1, 0, 0.835989, 0, 0.548746, -106.072, 0, -27.8756)
+use_collision = true
+size = Vector3(38.9395, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.0412827, 0, -0.999148, 0, 1, 0, 0.999148, 0, 0.0412827, -112.402, 0, -51.2746)
+use_collision = true
+size = Vector3(38.9395, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.587785, 0, -0.809017, 0, 1, 0, 0.809017, 0, 0.587785, -131.523, 0, -90.3632)
+use_collision = true
+size = Vector3(71.9688, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.692, 0, -115.015)
+use_collision = true
+size = Vector3(71.9688, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(0.996308, 0.0858517, 0, -0.0858517, 0.996308, 0, 0, 0, 1, -214.029, 0, -115.022)
+use_collision = true
+size = Vector3(71.9688, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270.885, 0, -117.075)
+use_collision = true
+size = Vector3(71.9688, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(0.879784, 0.104615, 0.46372, -0.0925466, 0.994513, -0.0487798, -0.466279, 0, 0.884638, -318.497, 0.13725, -112.727)
+use_collision = true
+size = Vector3(71.9688, 1, 30.9772)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.224033, 0, -0.974582, 0, 1, 0, 0.974582, 0, -0.224033, -359.312, 0, -35.736)
+use_collision = true
+size = Vector3(137.42, 1, 43.7936)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.144475, -0.962954, 0.227698, 0.209046, 0.195215, 0.958223, -0.967175, 0.186038, 0.173098, -353.685, 5.83058, -43.8817)
+use_collision = true
+size = Vector3(16.186, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(0.998234, 0.0594109, 0, -0.0594109, 0.998234, 0, 0, 0, 1, 39.2401, -2.04681, -0.0152588)
+use_collision = true
+size = Vector3(89.5038, 1, 25.3499)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.095, 0, 0, 0, 1, -373.684, -1.67469, 197.474)
+use_collision = true
+inner_radius = 143.042
+outer_radius = 213.34
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(0.343283, 0, -0.939232, 0, 1, 0, 0.939232, 0, 0.343283, -347.888, 0, 425.979)
+use_collision = true
+size = Vector3(137.42, 1, 43.7936)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, -0.192745, 0.981249, -8.42513e-09, -0.981249, -0.192745, -4.28918e-08, -373.668, 10.3842, 104.668)
+use_collision = true
+size = Vector3(165.878, 1, 43.7936)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="."]
+transform = Transform3D(4.31851e-08, -6.76261e-09, 1, -0.15471, -0.98796, 0, 0.98796, -0.15471, -4.37114e-08, -372.337, 11.2423, 282.496)
+use_collision = true
+size = Vector3(158.301, 1, 43.7936)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="."]
+transform = Transform3D(0.954699, 0, -0.297575, 0, 1, 0, 0.297575, 0, 0.954699, -275.551, 0, 504.34)
+use_collision = true
+size = Vector3(137.42, 1, 43.7936)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="SpinnyBoi2" parent="." instance=ExtResource("2_ymb5n")]
+transform = Transform3D(0.999351, 0, -0.0360155, 0, 1, 0, 0.0360155, 0, 0.999351, -319.167, 0, 1058.13)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -95.6422, 0, 526.21)
+use_collision = true
+size = Vector3(243.514, 1, 43.7936)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="SpinnyBoi" parent="." instance=ExtResource("2_ymb5n")]
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -148.68, 0, 1069.6)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 70.4836, -27.2708, 548.254)
+use_collision = true
+size = Vector3(243.514, 1, 70.3967)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 261.904, -80.7167, 517.77)
+use_collision = true
+size = Vector3(354.506, 1, 99.2211)
+material = SubResource("StandardMaterial3D_ftmo2")
