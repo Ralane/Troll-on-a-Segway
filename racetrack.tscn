@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_aw1gl"]
 [ext_resource type="PackedScene" uid="uid://cws60xsxx84fo" path="res://spinny_boi.tscn" id="2_ymb5n"]
 [ext_resource type="PackedScene" uid="uid://dweo4w4cci1y2" path="res://platformer_slide.tscn" id="3_eljse"]
-[ext_resource type="PackedScene" uid="uid://vg1ksli43ixj" path="res://ferris_wheel.tscn" id="4_clg2q"]
+[ext_resource type="PackedScene" uid="uid://bh1n0e1wcxk8v" path="res://house.tscn" id="4_auiot"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftmo2"]
 albedo_texture = ExtResource("1_aw1gl")
@@ -185,37 +185,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -1.0985e-11, 1, 38.4615, -0.74894, 
 operation = 2
 size = Vector3(782.191, 63.4044, 451.837)
 
-[node name="FerrisWheel" parent="." instance=ExtResource("4_clg2q")]
-transform = Transform3D(0.0113967, 0, 0.999935, 0, 1, 0, -0.999935, 0, 0.0113967, 573.64, -2.03111, 562.686)
-
-[node name="CSGBox3D18" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 748.39, 0, 547.203)
-use_collision = true
-size = Vector3(240.226, 1, 85.6389)
-material = SubResource("StandardMaterial3D_ftmo2")
-
-[node name="Checkpoint3" type="Area3D" parent="."]
-transform = Transform3D(0.0463219, 0, 0.998927, 0, 1, 0, -0.998927, 0, 0.0463219, 677.616, 0, 554.871)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint3"]
-shape = SubResource("SphereShape3D_tk166")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Checkpoint3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3717, 10.5803, 0)
-size = Vector3(1, 22.1606, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Checkpoint3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4435, 10.5803, 0)
-size = Vector3(1, 22.1606, 1)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Checkpoint3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54581, 20.9862, 0)
-size = Vector3(48.835, 1.34885, 1)
-
 [node name="CSGBox3D16" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -378.571, 0, 524.086)
 use_collision = true
 size = Vector3(146.306, 1, 81.5799)
 material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="."]
+transform = Transform3D(0.166717, 0, 0.986005, 0, 1, 0, -0.986005, 0, 0.166717, 542.304, -0.803284, 486.197)
+use_collision = true
+size = Vector3(237.788, 1, 85.6389)
+material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="House" parent="." instance=ExtResource("4_auiot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 561.363, 0, 397.175)

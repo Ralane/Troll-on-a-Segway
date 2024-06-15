@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends AnimatableBody3D
 
 var time = 0;
 var distance = 32;

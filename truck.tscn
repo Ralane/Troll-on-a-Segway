@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://caj52egc3orsf"]
+[gd_scene load_steps=27 format=3 uid="uid://caj52egc3orsf"]
 
 [ext_resource type="Script" path="res://truck.gd" id="1_j4mqy"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="2_voiyb"]
-[ext_resource type="FontFile" uid="uid://bvraukf260twf" path="res://fonts/bybsy/bybsy-regular-webfont.ttf" id="3_1h8o6"]
+[ext_resource type="FontFile" uid="uid://dj3wx0xqesym" path="res://fonts/ritaglio/Ritaglio.ttf" id="3_ko7ld"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8fkrq"]
 size = Vector3(5, 1, 7)
@@ -164,11 +164,66 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_0oloq"]
+resource_name = "gameWin"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0921683, 0.64774, 3.85046e-07, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:outline_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["u are winrar! :)"]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"win"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lrmgb"]
 _data = {
 "RESET": SubResource("Animation_mw7tn"),
 "checkpoint": SubResource("Animation_7c1qs"),
-"gameOverCntdown": SubResource("Animation_hm8sk")
+"gameOverCntdown": SubResource("Animation_hm8sk"),
+"gameWin": SubResource("Animation_0oloq")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt88j"]
@@ -279,7 +334,7 @@ fixed_size = true
 modulate = Color(1, 1, 1, 0)
 outline_modulate = Color(0, 0, 0, 0)
 text = "3"
-font = ExtResource("3_1h8o6")
+font = ExtResource("3_ko7ld")
 uppercase = true
 
 [node name="ShowCheckpoint" type="AnimationPlayer" parent="."]
@@ -299,7 +354,7 @@ shape = SubResource("BoxShape3D_dt88j")
 transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0, 0.864692, -3.73031)
 text = "babis on bord:
 0"
-font = ExtResource("3_1h8o6")
+font = ExtResource("3_ko7ld")
 
 [node name="WheelR" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
@@ -342,4 +397,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299955, 4.24158)
 size = Vector3(0.14, 0.025, 3.725)
 material = SubResource("StandardMaterial3D_25dea")
 
+[node name="WinDetector" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="WinDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125824, 8.17596, -0.23175)
+shape = SubResource("BoxShape3D_dt88j")
+
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="WinDetector" to="." method="_on_win_detector_area_entered"]

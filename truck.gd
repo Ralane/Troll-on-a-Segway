@@ -33,3 +33,11 @@ func _physics_process(delta):
 
 func failure():
 	get_tree().reload_current_scene();
+
+
+func win():
+	pass;
+
+
+func _on_win_detector_area_entered(area):
+	checkpointShow.play("gameWin");

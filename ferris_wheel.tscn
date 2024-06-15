@@ -24,13 +24,10 @@ shape = SubResource("CylinderShape3D_6rt4e")
 [node name="FerrisWheelCart" parent="RigidBody3D" instance=ExtResource("1_syg5q")]
 
 [node name="FerrisWheelCart2" parent="RigidBody3D" instance=ExtResource("1_syg5q")]
-offset = 0.4
+offset = 0.5
 
 [node name="FerrisWheelCart3" parent="RigidBody3D" instance=ExtResource("1_syg5q")]
 offset = 0.8
 
 [node name="FerrisWheelCart4" parent="RigidBody3D" instance=ExtResource("1_syg5q")]
 offset = 1.2
-
-[node name="FerrisWheelCart5" parent="RigidBody3D" instance=ExtResource("1_syg5q")]
-offset = 1.6
