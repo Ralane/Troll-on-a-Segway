@@ -43,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0199523, 0)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 200.0
+angular_damp = 1.0
 script = ExtResource("1_q07jy")
 
 [node name="WheelL" type="VehicleWheel3D" parent="."]
@@ -51,7 +52,10 @@ use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.5
 wheel_radius = 0.7
-wheel_friction_slip = 20.0
+wheel_rest_length = 0.3
+wheel_friction_slip = 60.0
+suspension_travel = 0.3
+suspension_stiffness = 60.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WheelL"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -63,7 +67,10 @@ use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.5
 wheel_radius = 0.7
-wheel_friction_slip = 20.0
+wheel_rest_length = 0.3
+wheel_friction_slip = 60.0
+suspension_travel = 0.3
+suspension_stiffness = 60.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WheelR"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
