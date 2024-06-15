@@ -13,7 +13,8 @@ radial_segments = 6
 rings = 6
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jq2a5"]
-radius = 0.316413
+radius = 0.84304
+height = 3.93819
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_roiif"]
 
@@ -69,7 +70,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 
 mesh = SubResource("CylinderMesh_kcdjv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39008, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13691, -0.840345)
 shape = SubResource("CapsuleShape3D_jq2a5")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
