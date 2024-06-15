@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://gg5nnw8caoef"]
 
-[ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="4_nsmu3"]
-[ext_resource type="PackedScene" uid="uid://df2g2xcjrpb25" path="res://forest_racetrack.tscn" id="5_dqmuk"]
+[ext_resource type="PackedScene" path="res://troll_cart.tscn" id="4_nsmu3"]
+[ext_resource type="PackedScene" path="res://forest_racetrack.tscn" id="5_dqmuk"]
 [ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="9_tixp3"]
 [ext_resource type="PackedScene" uid="uid://duv3pg8ieo0v5" path="res://racetrack.tscn" id="10_8ei8w"]
 [ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="11_sg01e"]
