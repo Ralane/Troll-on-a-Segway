@@ -19,4 +19,4 @@ func _on_area_3d_area_entered(area):
 	checkpointShow.play("checkpoint");
 
 func _process(delta):
-	babiesOnBoard.text = "Babis on bord:\n" + str(babyCounter.get_overlapping_bodies().size());
+	babiesOnBoard.text = "troll babis on bord:\n" + str(babyCounter.get_overlapping_bodies().size());
