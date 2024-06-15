@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://duv3pg8ieo0v5"]
+[gd_scene load_steps=5 format=3 uid="uid://duv3pg8ieo0v5"]
 
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_aw1gl"]
 [ext_resource type="PackedScene" uid="uid://cws60xsxx84fo" path="res://spinny_boi.tscn" id="2_ymb5n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftmo2"]
 albedo_texture = ExtResource("1_aw1gl")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tk166"]
+radius = 35.013
 
 [node name="Node3D" type="Node3D"]
 
@@ -45,9 +48,9 @@ size = Vector3(71.9688, 1, 25.3499)
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
-transform = Transform3D(0.996308, 0.0858517, 0, -0.0858517, 0.996308, 0, 0, 0, 1, -214.029, 0, -115.022)
+transform = Transform3D(0.996308, 0.0858517, 0, -0.0858517, 0.996308, 0, 0, 0, 1, -214.029, 0, -109.512)
 use_collision = true
-size = Vector3(71.9688, 1, 25.3499)
+size = Vector3(71.9688, 1, 36.3702)
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="."]
@@ -69,7 +72,7 @@ size = Vector3(137.42, 1, 43.7936)
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.144475, -0.962954, 0.227698, 0.209046, 0.195215, 0.958223, -0.967175, 0.186038, 0.173098, -353.685, 5.83058, -43.8817)
+transform = Transform3D(-0.144475, -0.962954, 0.227698, 0.209046, 0.195215, 0.958223, -0.967175, 0.186038, 0.173098, -218.153, 5.83058, -117.256)
 use_collision = true
 size = Vector3(16.186, 1, 25.3499)
 material = SubResource("StandardMaterial3D_ftmo2")
@@ -112,7 +115,7 @@ size = Vector3(137.42, 1, 43.7936)
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="SpinnyBoi2" parent="." instance=ExtResource("2_ymb5n")]
-transform = Transform3D(0.999351, 0, -0.0360155, 0, 1, 0, 0.0360155, 0, 0.999351, -319.167, 0, 1058.13)
+transform = Transform3D(0.999351, 0, -0.0360155, 0, 1, 0, 0.0360155, 0, 0.999351, -319.167, 0, 1044.32)
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="."]
 transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -95.6422, 0, 526.21)
@@ -124,13 +127,32 @@ material = SubResource("StandardMaterial3D_ftmo2")
 transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -148.68, 0, 1069.6)
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 70.4836, -27.2708, 548.254)
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 70.4836, -16.8372, 548.254)
 use_collision = true
 size = Vector3(243.514, 1, 70.3967)
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 261.904, -80.7167, 517.77)
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, 261.904, -49.3315, 517.77)
 use_collision = true
 size = Vector3(354.506, 1, 99.2211)
 material = SubResource("StandardMaterial3D_ftmo2")
+
+[node name="SpinnyBoi3" parent="." instance=ExtResource("2_ymb5n")]
+transform = Transform3D(0.999351, 0, -0.0360155, 0, 1, 0, 0.0360155, 0, 0.999351, -512.65, 0.800652, 485.416)
+
+[node name="Checkpoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -361.055, 0, 410.884)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint"]
+shape = SubResource("SphereShape3D_tk166")
+
+[node name="Checkpoint2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.305, 0, -114.888)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint2"]
+shape = SubResource("SphereShape3D_tk166")

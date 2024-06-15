@@ -11,17 +11,18 @@ albedo_texture = ExtResource("1_0o1ah")
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e20j6"]
-size = Vector3(22, 10, 1)
+size = Vector3(30, 10, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f8uqj"]
 material = SubResource("StandardMaterial3D_ftmo2")
-size = Vector3(22, 10, 1)
+size = Vector3(30, 10, 1)
 
 [node name="SpinnyBoi" type="Node3D"]
 transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -148.68, 0, 525.254)
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5066, 1.62659, -545.729)
+transform = Transform3D(1, 0, 1.11759e-08, 0, 1, 0, -1.11759e-08, 0, 1, 138.872, 1.62659, -527.455)
+mass = 100.0
 freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
@@ -40,7 +41,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.608566, 0)
 mesh = SubResource("CapsuleMesh_8523v")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(0.999838, 0, 0.0180107, 0, 1, 0, -0.0180107, 0, 0.999838, 38.6011, 6.89243, -545.767)
+transform = Transform3D(0.999838, 0, 0.0180107, 0, 1, 0, -0.0180107, 0, 0.999838, 138.967, 6.89243, -527.493)
+mass = 50.0
+constant_torque = Vector3(0, 52.94, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_e20j6")
