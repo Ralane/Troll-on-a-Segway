@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ds3wt0k53v7ra"]
+
+[ext_resource type="FontFile" uid="uid://dj3wx0xqesym" path="res://fonts/ritaglio/Ritaglio.ttf" id="1_d3jah"]
+
+[resource]
+Button/fonts/font = ExtResource("1_d3jah")
+Label/colors/font_outline_color = Color(0.948977, 0.891999, 0.856433, 1)
+Label/fonts/font = ExtResource("1_d3jah")

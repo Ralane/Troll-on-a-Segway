@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwma3fu0sykaa"]
+[gd_scene load_steps=15 format=3 uid="uid://bwma3fu0sykaa"]
 
 [ext_resource type="Script" path="res://segway.gd" id="1_q07jy"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="2_vx0df"]
+[ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="3_onhwf"]
+[ext_resource type="Script" path="res://TimerLabel.gd" id="4_eoqk6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egnib"]
 albedo_color = Color(0, 0, 0, 1)
@@ -181,3 +183,28 @@ libraries = {
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152476, 0)
 target_position = Vector3(0, -2, 0)
+
+[node name="TimerIcon" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_onhwf")
+
+[node name="MarginContainer" type="MarginContainer" parent="TimerIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TimerIcon/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_eoqk6")

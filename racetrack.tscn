@@ -198,7 +198,7 @@ size = Vector3(237.788, 1, 85.6389)
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="House" parent="." instance=ExtResource("4_auiot")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 561.363, 0, 397.175)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 561.363, 4.35075, 397.175)
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="."]
 transform = Transform3D(0.81534, -0.575805, -0.0605678, -0.0990247, -0.241754, 0.965272, -0.570452, -0.781027, -0.254131, -243.327, 5.6826, -98.8184)

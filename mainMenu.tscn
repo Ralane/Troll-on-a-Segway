@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://0ve1ncsa4cfd"]
+
+[ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="1_2pkx3"]
+[ext_resource type="Texture2D" uid="uid://cbft5f5dsn0iq" path="res://placeholderBackground.PNG" id="2_w7til"]
+[ext_resource type="Script" path="res://LevelLoader.gd" id="3_5iin8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8h3w"]
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2pkx3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -359.0
+offset_top = -219.5
+offset_right = 359.0
+offset_bottom = 219.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w7til")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+collapsed = true
+dragger_visibility = 2
+
+[node name="MenuTitle" type="Label" parent="MarginContainer/HSplitContainer"]
+layout_mode = 2
+theme = ExtResource("1_2pkx3")
+text = "TROLL ON A SEGWAY"
+label_settings = SubResource("LabelSettings_k8h3w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="Lvl1" type="Button" parent="MarginContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2pkx3")
+text = "Level 1"
+script = ExtResource("3_5iin8")
+levelToLoad = "res://Playground.tscn"

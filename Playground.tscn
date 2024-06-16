@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://gg5nnw8caoef"]
+[gd_scene load_steps=10 format=3 uid="uid://gg5nnw8caoef"]
 
-[ext_resource type="FontFile" uid="uid://dj3wx0xqesym" path="res://fonts/ritaglio/Ritaglio.ttf" id="1_785vb"]
+[ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="1_r8j7u"]
 [ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="4_nsmu3"]
 [ext_resource type="PackedScene" uid="uid://df2g2xcjrpb25" path="res://forest_racetrack.tscn" id="5_dqmuk"]
 [ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="9_tixp3"]
@@ -23,10 +23,6 @@ sky_material = SubResource("ProceduralSkyMaterial_yqara")
 background_mode = 2
 background_energy_multiplier = 1.82
 sky = SubResource("Sky_vmkfx")
-
-[sub_resource type="Theme" id="Theme_u732a"]
-Label/colors/font_outline_color = Color(0.948977, 0.891999, 0.856433, 1)
-Label/fonts/font = ExtResource("1_785vb")
 
 [node name="Node3D" type="Node3D"]
 
@@ -59,7 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_u732a")
+theme = ExtResource("1_r8j7u")
 script = ExtResource("9_tixp3")
 delay = 4.0
 lines = Array[String](["wasd control zoom scooter", "bring babie trolls h ome  pleaz", "cart full of babies  trols", "carful  not  kil babis", "wasd move scooter", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd make segway move", "7y80[9hnhy80[", "ow hurt  face  on key bord", "ignor last messag", "baby trolls need go home"])
