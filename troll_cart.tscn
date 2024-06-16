@@ -1,12 +1,496 @@
-[gd_scene load_steps=4 format=3 uid="uid://clj8vxclpwva1"]
+[gd_scene load_steps=32 format=3 uid="uid://clj8vxclpwva1"]
 
-[ext_resource type="PackedScene" uid="uid://caj52egc3orsf" path="res://truck.tscn" id="1_sfhkf"]
+[ext_resource type="Script" path="res://troll_cart.gd" id="1_cixs5"]
 [ext_resource type="PackedScene" uid="uid://bwma3fu0sykaa" path="res://segway.tscn" id="2_83k7x"]
+[ext_resource type="Script" path="res://truck.gd" id="2_wnij2"]
 [ext_resource type="PackedScene" uid="uid://8usbueroyga" path="res://multi_gnomes.tscn" id="3_53ejr"]
+[ext_resource type="FontFile" uid="uid://dj3wx0xqesym" path="res://fonts/ritaglio/Ritaglio.ttf" id="3_oi7ed"]
+[ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="4_eq804"]
+[ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="5_pc2ft"]
+[ext_resource type="Script" path="res://TimerLabel.gd" id="6_5hsgr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fkrq"]
+size = Vector3(5, 1, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8m3w"]
+albedo_color = Color(0.693179, 0.444197, 5.77569e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8utl2"]
+material = SubResource("StandardMaterial3D_i8m3w")
+size = Vector3(5, 1, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vc87m"]
+size = Vector3(5, 1.43359, 0.502686)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojvq2"]
+albedo_color = Color(0.693179, 0.444197, 5.77569e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wivv0"]
+material = SubResource("StandardMaterial3D_ojvq2")
+size = Vector3(5, 1, 0.62)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xeo6s"]
+size = Vector3(0.578125, 1, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjlgl"]
+albedo_color = Color(0.693179, 0.444197, 5.77569e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_70ubw"]
+material = SubResource("StandardMaterial3D_qjlgl")
+size = Vector3(0.475, 1, 7)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0jplr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38fbs"]
+albedo_color = Color(0.286275, 1, 1, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_b5kt8"]
+material = SubResource("StandardMaterial3D_38fbs")
+
+[sub_resource type="Animation" id="Animation_mw7tn"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:outline_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TimerIcon/MarginContainer/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TimerIcon/MarginContainer/Label")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"unpause"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7c1qs"]
+resource_name = "checkpoint"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:outline_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["chekpont!"]
+}
+
+[sub_resource type="Animation" id="Animation_hm8sk"]
+resource_name = "gameOverCntdown"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:outline_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["3", "2", "1", "all babis are kill :("]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"failure"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0oloq"]
+resource_name = "gameWin"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0921683, 0.64774, 3.85046e-07, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:outline_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["u ar winur! :)"]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"win"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TimerIcon/MarginContainer/Label:modulate")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.682353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.682353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.682353), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TimerIcon/MarginContainer/Label")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pause"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lrmgb"]
+_data = {
+"RESET": SubResource("Animation_mw7tn"),
+"checkpoint": SubResource("Animation_7c1qs"),
+"gameOverCntdown": SubResource("Animation_hm8sk"),
+"gameWin": SubResource("Animation_0oloq")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt88j"]
+size = Vector3(5.04437, 17.3519, 6.67346)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8qx11"]
+rough = true
+bounce = 0.38
+absorbent = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ao553"]
+height = 0.412932
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4dkf"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wy6w5"]
+material = SubResource("StandardMaterial3D_f4dkf")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.499
+radial_segments = 6
+rings = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25dea"]
+albedo_texture = ExtResource("4_eq804")
 
 [node name="TrollCart" type="Node3D"]
+script = ExtResource("1_cixs5")
 
-[node name="RigidBody3D" parent="." instance=ExtResource("1_sfhkf")]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02391, -5.87868)
+mass = 25.0
+linear_damp = 0.593
+angular_damp = 3.264
+script = ExtResource("2_wnij2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_8fkrq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_8utl2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842699, 3.24866)
+shape = SubResource("BoxShape3D_vc87m")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842699, -3.22897)
+shape = SubResource("BoxShape3D_vc87m")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07433, 0)
+light_color = Color(1, 0.419608, 1, 1)
+omni_range = 4.565
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84016, -3.3202)
+mesh = SubResource("BoxMesh_wivv0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84016, 3.25497)
+mesh = SubResource("BoxMesh_wivv0")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21094, 1.01781, 0)
+shape = SubResource("BoxShape3D_xeo6s")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25654, 1.01781, 0)
+shape = SubResource("BoxShape3D_xeo6s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23579, 0.810681, 0)
+mesh = SubResource("BoxMesh_70ubw")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31814, 0.810681, 0)
+mesh = SubResource("BoxMesh_70ubw")
+
+[node name="MultiGnomeSpawner" type="Marker3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489665, 1.35604)
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15666, 0)
+shape = SubResource("SphereShape3D_0jplr")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62391, 0)
+emitting = false
+amount = 64
+lifetime = 2.0
+one_shot = true
+mesh = SubResource("QuadMesh_b5kt8")
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 12.09
+
+[node name="Label3D" type="Label3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.08526, 0)
+billboard = 1
+no_depth_test = true
+fixed_size = true
+modulate = Color(1, 1, 1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "u ar winur! :)"
+font = ExtResource("3_oi7ed")
+uppercase = true
+
+[node name="ShowCheckpoint" type="AnimationPlayer" parent="RigidBody3D"]
+libraries = {
+"": SubResource("AnimationLibrary_lrmgb")
+}
+
+[node name="BabyCounter" type="Area3D" parent="RigidBody3D"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="RigidBody3D/BabyCounter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125824, 8.17596, -0.23175)
+shape = SubResource("BoxShape3D_dt88j")
+
+[node name="BabiesOnBoard" type="Label3D" parent="RigidBody3D"]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0, 0.864692, -3.73031)
+text = "babis on bord:
+0"
+font = ExtResource("3_oi7ed")
+
+[node name="WheelR" type="RigidBody3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_8qx11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/WheelR"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
+shape = SubResource("CylinderShape3D_ao553")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/WheelR"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_wy6w5")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, 0)
+node_a = NodePath("..")
+node_b = NodePath("../WheelR")
+
+[node name="WheelL" type="RigidBody3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_8qx11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/WheelL"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
+shape = SubResource("CylinderShape3D_ao553")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/WheelL"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_wy6w5")
+
+[node name="HingeJoint3D2" type="HingeJoint3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 0)
+node_a = NodePath("..")
+node_b = NodePath("../WheelL")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299955, 4.24158)
+size = Vector3(0.14, 0.025, 3.725)
+material = SubResource("StandardMaterial3D_25dea")
+
+[node name="WinDetector" type="Area3D" parent="RigidBody3D"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="RigidBody3D/WinDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125824, 8.17596, -0.23175)
+shape = SubResource("BoxShape3D_dt88j")
+
+[node name="TimerIcon" type="Control" parent="RigidBody3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_pc2ft")
+
+[node name="MarginContainer" type="MarginContainer" parent="RigidBody3D/TimerIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="RigidBody3D/TimerIcon/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Timer text 0:00:00
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_5hsgr")
 
 [node name="Node3D" parent="." instance=ExtResource("2_83k7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46492, 3.20153)
@@ -22,3 +506,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88448, 4.13068, -6.07794)
 
 [node name="MultiGnomes2" parent="." instance=ExtResource("3_53ejr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5871, 4.13068, -6.07794)
+
+[connection signal="area_entered" from="RigidBody3D/Area3D" to="RigidBody3D" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="RigidBody3D/WinDetector" to="RigidBody3D" method="_on_win_detector_area_entered"]

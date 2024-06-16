@@ -1,37 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://gg5nnw8caoef"]
+[gd_scene load_steps=3 format=3 uid="uid://gg5nnw8caoef"]
 
 [ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="1_r8j7u"]
-[ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="4_nsmu3"]
-[ext_resource type="PackedScene" uid="uid://df2g2xcjrpb25" path="res://forest_racetrack.tscn" id="5_dqmuk"]
-[ext_resource type="Script" path="res://BabyDeleter.gd" id="7_iwlc4"]
 [ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="9_tixp3"]
-[ext_resource type="PackedScene" uid="uid://duv3pg8ieo0v5" path="res://racetrack.tscn" id="10_8ei8w"]
-[ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="11_sg01e"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqara"]
-sky_top_color = Color(0.342624, 0.407319, 0.78929, 1)
-sky_horizon_color = Color(0.844269, 0.558073, 0.65713, 1)
-sky_cover_modulate = Color(0.84235, 0.740574, 0.89393, 1)
-ground_bottom_color = Color(0.128755, 0.172008, 0.270854, 1)
-ground_horizon_color = Color(0.254521, 0.716338, 0.862235, 1)
-sun_angle_max = 16.2
-sun_curve = 1.11964
-
-[sub_resource type="Sky" id="Sky_vmkfx"]
-sky_material = SubResource("ProceduralSkyMaterial_yqara")
-
-[sub_resource type="Environment" id="Environment_l26cd"]
-background_mode = 2
-background_energy_multiplier = 1.82
-sky = SubResource("Sky_vmkfx")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qq3ug"]
-size = Vector3(2000, 0.34082, 2000)
 
 [node name="Node3D" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_l26cd")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -63,24 +35,3 @@ theme = ExtResource("1_r8j7u")
 script = ExtResource("9_tixp3")
 delay = 4.0
 lines = Array[String](["wasd control zoom scooter", "bring babie trolls h ome  pleaz", "cart full of babies  trols", "carful  not  kil babis", "wasd move scooter", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd make segway move", "7y80[9hnhy80[", "ow hurt  face  on key bord", "ignor last messag", "baby trolls need go home"])
-
-[node name="Racetrack" parent="." instance=ExtResource("10_8ei8w")]
-transform = Transform3D(-0.0633827, 0, 0.997989, 0, 1, 0, -0.997989, 0, -0.0633827, 0, 0.208234, 11.4001)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_sg01e")
-autoplay = true
-
-[node name="ForestRacetrack" parent="." instance=ExtResource("5_dqmuk")]
-
-[node name="TrollCart" parent="." instance=ExtResource("4_nsmu3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64871, -26.354)
-
-[node name="BabyDeleter" type="Area3D" parent="."]
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("7_iwlc4")
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="BabyDeleter"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125824, -139.498, -0.23175)
-shape = SubResource("BoxShape3D_qq3ug")

@@ -1,9 +1,17 @@
 extends Label
 
 var aliveTime = 0;
+var paused = false;
+
+func unpause():
+	paused = false;
+
+func pause():
+	paused = true;
 
 func _process(delta):
-	aliveTime += delta;
+	if(!paused):
+		aliveTime += delta;
 	text = _seconds_to_timer_text(aliveTime);
 
 func _seconds_to_timer_text(time):

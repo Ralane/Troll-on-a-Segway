@@ -54,6 +54,13 @@ layout_mode = 2
 [node name="Lvl1" type="Button" parent="MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_2pkx3")
-text = "Level 1"
+text = "level 1: real racetrak"
 script = ExtResource("3_5iin8")
-levelToLoad = "res://Playground.tscn"
+levelToLoad = "res://levels/lvl1_racetrack.tscn"
+
+[node name="Lvl2" type="Button" parent="MarginContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2pkx3")
+text = "level 2: flimsy forist"
+script = ExtResource("3_5iin8")
+levelToLoad = "res://levels/lvl2_forest.tscn"

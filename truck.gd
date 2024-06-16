@@ -36,7 +36,7 @@ func failure():
 
 
 func win():
-	pass;
+	get_tree().change_scene_to_file(get_parent_node_3d().nextLevelToLoad)
 
 
 func _on_win_detector_area_entered(area):
