@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://duv3pg8ieo0v5"]
+[gd_scene load_steps=6 format=3 uid="uid://duv3pg8ieo0v5"]
 
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_aw1gl"]
 [ext_resource type="PackedScene" uid="uid://cws60xsxx84fo" path="res://spinny_boi.tscn" id="2_ymb5n"]
-[ext_resource type="PackedScene" uid="uid://dweo4w4cci1y2" path="res://platformer_slide.tscn" id="3_eljse"]
 [ext_resource type="PackedScene" uid="uid://bh1n0e1wcxk8v" path="res://house.tscn" id="4_auiot"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftmo2"]
@@ -114,9 +113,9 @@ material = SubResource("StandardMaterial3D_ftmo2")
 transform = Transform3D(0.228385, 0, -0.973571, 0, 1, 0, 0.973571, 0, 0.228385, -628.511, 0, 562.417)
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -93.1564, 0, 547.181)
+transform = Transform3D(0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, 0.999838, -159.246, 0, 545.991)
 use_collision = true
-size = Vector3(237.788, 1, 85.6389)
+size = Vector3(369.989, 1, 85.6389)
 material = SubResource("StandardMaterial3D_ftmo2")
 
 [node name="SpinnyBoi" parent="." instance=ExtResource("2_ymb5n")]
@@ -124,9 +123,6 @@ transform = Transform3D(0.984968, 0, 0.172737, 0, 1, 0, -0.172737, 0, 0.984968, 
 
 [node name="SpinnyBoi3" parent="." instance=ExtResource("2_ymb5n")]
 transform = Transform3D(0.999351, 0, -0.0360155, 0, 1, 0, 0.0360155, 0, 0.999351, -512.65, 0.800652, 485.416)
-
-[node name="PlatformerSlide" parent="." instance=ExtResource("3_eljse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -313.059, 0.307726, 520.092)
 
 [node name="Checkpoint" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -361.055, 0, 410.884)
@@ -167,9 +163,6 @@ size = Vector3(1, 22.1606, 1)
 [node name="CSGBox3D3" type="CSGBox3D" parent="Checkpoint2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54581, 20.9862, 0)
 size = Vector3(48.835, 1.34885, 1)
-
-[node name="PlatformerSlide2" parent="." instance=ExtResource("3_eljse")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -251.228, 0.307726, 522.238)
 
 [node name="CSGTorus3D2" type="CSGTorus3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -2.35167e-07, -1, 0, 5.38, -4.37114e-08, 248.068, 157.535, 546.065)

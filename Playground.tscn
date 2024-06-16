@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://gg5nnw8caoef"]
+[gd_scene load_steps=12 format=3 uid="uid://gg5nnw8caoef"]
 
 [ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="1_r8j7u"]
 [ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="4_nsmu3"]
 [ext_resource type="PackedScene" uid="uid://df2g2xcjrpb25" path="res://forest_racetrack.tscn" id="5_dqmuk"]
+[ext_resource type="Script" path="res://BabyDeleter.gd" id="7_iwlc4"]
 [ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="9_tixp3"]
 [ext_resource type="PackedScene" uid="uid://duv3pg8ieo0v5" path="res://racetrack.tscn" id="10_8ei8w"]
 [ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="11_sg01e"]
@@ -23,6 +24,9 @@ sky_material = SubResource("ProceduralSkyMaterial_yqara")
 background_mode = 2
 background_energy_multiplier = 1.82
 sky = SubResource("Sky_vmkfx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qq3ug"]
+size = Vector3(2000, 0.34082, 2000)
 
 [node name="Node3D" type="Node3D"]
 
@@ -71,3 +75,12 @@ autoplay = true
 
 [node name="TrollCart" parent="." instance=ExtResource("4_nsmu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64871, -26.354)
+
+[node name="BabyDeleter" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("7_iwlc4")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="BabyDeleter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125824, -139.498, -0.23175)
+shape = SubResource("BoxShape3D_qq3ug")
