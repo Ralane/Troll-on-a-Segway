@@ -1,9 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://clj8vxclpwva1"]
+[gd_scene load_steps=31 format=3 uid="uid://clj8vxclpwva1"]
 
 [ext_resource type="Script" path="res://troll_cart.gd" id="1_cixs5"]
 [ext_resource type="PackedScene" uid="uid://bwma3fu0sykaa" path="res://segway.tscn" id="2_83k7x"]
 [ext_resource type="Script" path="res://truck.gd" id="2_wnij2"]
-[ext_resource type="PackedScene" uid="uid://8usbueroyga" path="res://multi_gnomes.tscn" id="3_53ejr"]
 [ext_resource type="FontFile" uid="uid://dj3wx0xqesym" path="res://fonts/ritaglio/Ritaglio.ttf" id="3_oi7ed"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="4_eq804"]
 [ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="5_pc2ft"]
@@ -500,12 +499,6 @@ angular_damp = 22.255
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63486, 0.27065)
 node_a = NodePath("../RigidBody3D")
 node_b = NodePath("../Node3D")
-
-[node name="MultiGnomes" parent="." instance=ExtResource("3_53ejr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88448, 4.13068, -6.07794)
-
-[node name="MultiGnomes2" parent="." instance=ExtResource("3_53ejr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5871, 4.13068, -6.07794)
 
 [connection signal="area_entered" from="RigidBody3D/Area3D" to="RigidBody3D" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="RigidBody3D/WinDetector" to="RigidBody3D" method="_on_win_detector_area_entered"]
