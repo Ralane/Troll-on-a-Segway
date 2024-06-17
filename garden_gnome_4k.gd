@@ -1,13 +1,21 @@
 extends RigidBody3D
 
 @onready var impactSound = $ImpactSound;
-var previousCollisions = 0;
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	if(get_contact_count() > previousCollisions and !impactSound.playing):
-		impactSound.volume_db = -30 + linear_velocity.length();
+func _on_body_entered(body):
+	if(!impactSound.playing):
+		if(body != null and "linear_velocity" in body):
+			impactSound.volume_db = -25 + absf(linear_velocity.length() - body.linear_velocity.length());
+		else:
+			impactSound.volume_db = -30 + absf(linear_velocity.length());
 		impactSound.play();
-	
-	previousCollisions = get_contact_count();
+
+
+func _on_body_exited(body):
+	if(!impactSound.playing):
+		if(body != null and "linear_velocity" in body):
+			impactSound.volume_db = -25 + absf(linear_velocity.length() - body.linear_velocity.length());
+		else:
+			impactSound.volume_db = -30 + absf(linear_velocity.length());
+		impactSound.play();
+
