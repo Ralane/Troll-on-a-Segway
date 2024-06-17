@@ -37,7 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer"]
+[node name="HSplitContainer" type="VSplitContainer" parent="MarginContainer"]
 layout_mode = 2
 collapsed = true
 dragger_visibility = 2
@@ -48,19 +48,47 @@ theme = ExtResource("1_2pkx3")
 text = "TROLL ON A SEGWAY"
 label_settings = SubResource("LabelSettings_k8h3w")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/HSplitContainer"]
 layout_mode = 2
 
-[node name="Lvl1" type="Button" parent="MarginContainer/HSplitContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="Lvl1" type="Button" parent="MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_2pkx3")
 text = "level 1: real racetrak"
 script = ExtResource("3_5iin8")
 levelToLoad = "res://levels/lvl1_racetrack.tscn"
 
-[node name="Lvl2" type="Button" parent="MarginContainer/HSplitContainer/VBoxContainer"]
+[node name="Lvl2" type="Button" parent="MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_2pkx3")
 text = "level 2: flimsy forist"
 script = ExtResource("3_5iin8")
 levelToLoad = "res://levels/lvl2_forest.tscn"
+
+[node name="Panel" type="Panel" parent="MarginContainer/HSplitContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HSplitContainer/VSplitContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2pkx3")
+bbcode_enabled = true
+text = "Credits:
+
+0rangeYouGlad (Programming, 3d \"modeling\", level design)
+Caznix (Music, sound effects, level design)
+
+Assets used:
+
+Godot v4.2.2.stable.official [15073afe3]
+https://github.com/Zylann/godot_heightmap_plugin
+https://github.com/markeel/godot-marquee
+https://www.fontsquirrel.com/fonts/ritaglio
+https://polyhaven.com/a/garden_gnome"
