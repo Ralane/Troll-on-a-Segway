@@ -122,10 +122,10 @@ crushAnimation = "spin_reverse"
 transform = Transform3D(2, 0, 0, 0, 21.62, 0, 0, 0, 2, -185.29, -14.3263, 214.683)
 
 [node name="Pistons3" parent="." instance=ExtResource("9_iinf7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -187.631, 22.6423, 214.341)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -183.619, 22.6423, 213.807)
 
 [node name="Pistons4" parent="." instance=ExtResource("9_iinf7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -187.631, 22.6423, 107.357)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -183.619, 22.6423, 110.067)
 
 [node name="Pistons5" parent="." instance=ExtResource("9_iinf7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -366.499, 4.19085, 181.073)
