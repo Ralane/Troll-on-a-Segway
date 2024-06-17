@@ -1,9 +1,17 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ds3wt0k53v7ra"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ds3wt0k53v7ra"]
 
 [ext_resource type="FontFile" uid="uid://dj3wx0xqesym" path="res://fonts/ritaglio/Ritaglio.ttf" id="1_d3jah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pe43"]
+bg_color = Color(0.509804, 0.654902, 0.333333, 0.423529)
 
 [resource]
 Button/fonts/font = ExtResource("1_d3jah")
 Label/colors/font_outline_color = Color(0.948977, 0.891999, 0.856433, 1)
 Label/fonts/font = ExtResource("1_d3jah")
+Label/styles/normal = SubResource("StyleBoxFlat_2pe43")
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
 RichTextLabel/fonts/normal_font = ExtResource("1_d3jah")

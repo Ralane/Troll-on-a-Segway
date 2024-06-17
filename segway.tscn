@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwma3fu0sykaa"]
+[gd_scene load_steps=14 format=3 uid="uid://bwma3fu0sykaa"]
 
 [ext_resource type="Script" path="res://segway.gd" id="1_q07jy"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="2_vx0df"]
+[ext_resource type="AudioStream" uid="uid://wae6q8duuqf1" path="res://sfx/kenney_sci-fi-sounds/Audio/engineCircular_001.ogg" id="3_u0cgq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egnib"]
 albedo_color = Color(0, 0, 0, 1)
@@ -181,3 +182,8 @@ libraries = {
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152476, 0)
 target_position = Vector3(0, -2, 0)
+
+[node name="MotorSounds" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_u0cgq")
+max_db = 0.5
+autoplay = true

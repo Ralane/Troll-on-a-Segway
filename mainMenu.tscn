@@ -36,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_2pkx3")
 
 [node name="HSplitContainer" type="VSplitContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -47,6 +48,8 @@ layout_mode = 2
 theme = ExtResource("1_2pkx3")
 text = "TROLL ON A SEGWAY"
 label_settings = SubResource("LabelSettings_k8h3w")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/HSplitContainer"]
 layout_mode = 2
@@ -91,4 +94,5 @@ Godot v4.2.2.stable.official [15073afe3]
 https://github.com/Zylann/godot_heightmap_plugin
 https://github.com/markeel/godot-marquee
 https://www.fontsquirrel.com/fonts/ritaglio
-https://polyhaven.com/a/garden_gnome"
+https://polyhaven.com/a/garden_gnome
+https://kenney.nl/assets/sci-fi-sounds"
