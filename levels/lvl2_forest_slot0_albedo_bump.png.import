@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcyjfaq5ag0eg"
-path.s3tc="res://.godot/imported/Playground_slot0_normal_roughness.png-c2cb62f38103db1732aea9789df2a14f.s3tc.ctex"
+uid="uid://ds22utr6tqq5f"
+path.s3tc="res://.godot/imported/lvl2_forest_slot0_albedo_bump.png-1149f7c3a37511558e139cbbc5242260.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Playground_slot0_normal_roughness.png"
-dest_files=["res://.godot/imported/Playground_slot0_normal_roughness.png-c2cb62f38103db1732aea9789df2a14f.s3tc.ctex"]
+source_file="res://levels/lvl2_forest_slot0_albedo_bump.png"
+dest_files=["res://.godot/imported/lvl2_forest_slot0_albedo_bump.png-1149f7c3a37511558e139cbbc5242260.s3tc.ctex"]
 
 [params]
 

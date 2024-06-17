@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://df2g2xcjrpb25"]
+[gd_scene load_steps=17 format=3 uid="uid://df2g2xcjrpb25"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_k0gxn"]
 [ext_resource type="Resource" path="res://map_data/data.hterrain" id="2_8td2j"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_qkfst"]
-[ext_resource type="Texture2D" uid="uid://2hyiaca2j8bl" path="res://Playground_slot0_albedo_bump.png" id="4_d3c8h"]
-[ext_resource type="Texture2D" uid="uid://dcyjfaq5ag0eg" path="res://Playground_slot0_normal_roughness.png" id="5_miko1"]
+[ext_resource type="Texture2D" uid="uid://dynsibntyikgl" path="res://grass.png" id="4_82uqe"]
+[ext_resource type="Texture2D" uid="uid://c6n0tlsuq52rr" path="res://levels/lvl2_forest_slot0_normal_roughness.png" id="5_1h36i"]
 [ext_resource type="Texture2D" uid="uid://bwtu6g4cu513w" path="res://tree.png" id="6_03iva"]
 [ext_resource type="PackedScene" uid="uid://dnaq24pf6syys" path="res://house.tscn" id="7_je3nb"]
 [ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="8_cxxod"]
@@ -13,7 +13,7 @@
 [sub_resource type="Resource" id="Resource_5q6ix"]
 script = ExtResource("3_qkfst")
 mode = 0
-textures = [[ExtResource("4_d3c8h")], [ExtResource("5_miko1")]]
+textures = [[ExtResource("4_82uqe")], [ExtResource("5_1h36i")]]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_issk1"]
 transparency = 1
@@ -42,6 +42,9 @@ background_mode = 2
 background_energy_multiplier = 1.82
 sky = SubResource("Sky_mxpji")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_wb1h2"]
+radius = 10000.0
+
 [node name="ForestRacetrack" type="Node3D"]
 
 [node name="HTerrain" type="Node3D" parent="."]
@@ -66,15 +69,15 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -416.096, -216.397, 48.7805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -465.255, -216.397, 48.7805)
 use_collision = true
-size = Vector3(932.192, 110.982, 2.43903)
+size = Vector3(1245.29, 110.982, 2.43903)
 material = SubResource("StandardMaterial3D_issk1")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -416.096, -216.397, 311.625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -464.095, -216.397, 311.625)
 use_collision = true
-size = Vector3(932.192, 110.982, 2.43903)
+size = Vector3(1185.6, 110.982, 2.43903)
 material = SubResource("StandardMaterial3D_issk1")
 
 [node name="Checkpoint" type="Area3D" parent="."]
@@ -98,10 +101,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54581, 20.9862, 0)
 size = Vector3(48.835, 1.34885, 1)
 
 [node name="House" parent="." instance=ExtResource("7_je3nb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1004.86, -238.712, 192.225)
+transform = Transform3D(0.213508, 0, 0.976941, 0, 1, 0, -0.976941, 0, 0.213508, -1004.86, -238.712, 192.225)
 
 [node name="TrollCart" parent="." instance=ExtResource("8_cxxod")]
 transform = Transform3D(0.0133165, 0, -0.999911, 0, 1, 0, 0.999911, 0, 0.0133165, 16.9043, -240.114, 136.91)
+nextLevelToLoad = "res://levels/lvl_3_dwarven_caverns.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xruh4")
@@ -109,3 +113,22 @@ environment = SubResource("Environment_xruh4")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_t2j4u")
 autoplay = true
+
+[node name="Area3D" type="Area3D" parent="."]
+gravity_space_override = 3
+gravity = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_wb1h2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.157986, 0, -0.987441, 0, 1, 0, 0.987441, 0, -0.157986, 128.447, -216.397, 184.004)
+use_collision = true
+size = Vector3(298.546, 110.982, 2.43903)
+material = SubResource("StandardMaterial3D_issk1")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.157986, 0, -0.987441, 0, 1, 0, 0.987441, 0, -0.157986, -1035.99, -216.397, 184.004)
+use_collision = true
+size = Vector3(298.546, 110.982, 2.43903)
+material = SubResource("StandardMaterial3D_issk1")
