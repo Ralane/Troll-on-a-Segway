@@ -10,6 +10,10 @@ extends RigidBody3D
 
 var lastBabyCount = 0;
 
+func _unhandled_input(event):
+	if(event.is_action_pressed("escape")):
+		get_tree().change_scene_to_file(get_parent_node_3d().mainMenuScreen)
+
 func _on_area_3d_area_entered(area):
 	var gnewGnomes = gnomes.instantiate();
 	area.queue_free();
