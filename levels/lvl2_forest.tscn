@@ -34,13 +34,13 @@ ground_horizon_color = Color(0.254521, 0.716338, 0.862235, 1)
 sun_angle_max = 16.2
 sun_curve = 1.11964
 
-[sub_resource type="Sky" id="Sky_vmkfx"]
+[sub_resource type="Sky" id="Sky_mxpji"]
 sky_material = SubResource("ProceduralSkyMaterial_6h2a4")
 
 [sub_resource type="Environment" id="Environment_xruh4"]
 background_mode = 2
 background_energy_multiplier = 1.82
-sky = SubResource("Sky_vmkfx")
+sky = SubResource("Sky_mxpji")
 
 [node name="ForestRacetrack" type="Node3D"]
 
@@ -99,7 +99,6 @@ size = Vector3(48.835, 1.34885, 1)
 
 [node name="House" parent="." instance=ExtResource("7_je3nb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1004.86, -238.712, 192.225)
-levelToLoad = "res://levels/lvl2_forest.tscn"
 
 [node name="TrollCart" parent="." instance=ExtResource("8_cxxod")]
 transform = Transform3D(0.0133165, 0, -0.999911, 0, 1, 0, 0.999911, 0, 0.0133165, 16.9043, -240.114, 136.91)

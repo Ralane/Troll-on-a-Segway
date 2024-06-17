@@ -71,6 +71,13 @@ text = "level 2: flimsy forist"
 script = ExtResource("3_5iin8")
 levelToLoad = "res://levels/lvl2_forest.tscn"
 
+[node name="Lvl3" type="Button" parent="MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2pkx3")
+text = "level 3: dorf danger"
+script = ExtResource("3_5iin8")
+levelToLoad = "res://levels/lvl_3_dwarven_caverns.tscn"
+
 [node name="Panel" type="Panel" parent="MarginContainer/HSplitContainer/VSplitContainer"]
 layout_mode = 2
 

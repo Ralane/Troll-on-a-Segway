@@ -1,0 +1,170 @@
+[gd_scene load_steps=17 format=3 uid="uid://dpxc6usg27lvp"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_wplwa"]
+[ext_resource type="Resource" path="res://levels/lvl3_mapdata_floor/data.hterrain" id="2_66hjm"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_ye6ux"]
+[ext_resource type="Resource" path="res://levels/lvl3_mapdata_ceil/data.hterrain" id="4_80jel"]
+[ext_resource type="PackedScene" uid="uid://dnaq24pf6syys" path="res://house.tscn" id="5_6whi3"]
+[ext_resource type="Texture2D" uid="uid://b7on4y6d0cgab" path="res://textures/dwarven_rock.png" id="5_jwns4"]
+[ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="6_1m4n1"]
+[ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="7_4faw8"]
+[ext_resource type="PackedScene" uid="uid://bnt1clbatrerf" path="res://pistons.tscn" id="9_iinf7"]
+[ext_resource type="PackedScene" uid="uid://cb6brbl10njjt" path="res://dwarf_gear.tscn" id="10_7oam3"]
+
+[sub_resource type="Resource" id="Resource_ll4j6"]
+script = ExtResource("3_ye6ux")
+mode = 0
+textures = [[ExtResource("5_jwns4")], [null]]
+
+[sub_resource type="Resource" id="Resource_fqx45"]
+script = ExtResource("3_ye6ux")
+mode = 0
+textures = [[ExtResource("5_jwns4")], [null]]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b1n41"]
+sky_top_color = Color(0.342624, 0.407319, 0.78929, 1)
+sky_horizon_color = Color(0.844269, 0.558073, 0.65713, 1)
+sky_cover_modulate = Color(0.84235, 0.740574, 0.89393, 1)
+ground_bottom_color = Color(0.128755, 0.172008, 0.270854, 1)
+ground_horizon_color = Color(0.254521, 0.716338, 0.862235, 1)
+sun_angle_max = 16.2
+sun_curve = 1.11964
+
+[sub_resource type="Sky" id="Sky_vmkfx"]
+sky_material = SubResource("ProceduralSkyMaterial_b1n41")
+
+[sub_resource type="Environment" id="Environment_h21to"]
+background_mode = 2
+background_energy_multiplier = 1.82
+sky = SubResource("Sky_vmkfx")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ig4xe"]
+radius = 35.013
+
+[node name="lvl3_dwarven_caverns" type="Node3D"]
+
+[node name="Floor" type="Node3D" parent="."]
+script = ExtResource("1_wplwa")
+map_scale = Vector3(24, 24, 24)
+centered = true
+_terrain_data = ExtResource("2_66hjm")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_ll4j6")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="Ceiling" type="Node3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 128, 0)
+script = ExtResource("1_wplwa")
+map_scale = Vector3(24, 24, 24)
+centered = true
+_terrain_data = ExtResource("4_80jel")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_fqx45")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="House" parent="." instance=ExtResource("5_6whi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -678.746, 2.89603, 714.221)
+
+[node name="TrollCart" parent="." instance=ExtResource("6_1m4n1")]
+transform = Transform3D(0.0133165, 0, -0.999911, 0, 1, 0, 0.999911, 0, 0.0133165, 16.9043, -0.356716, 136.91)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_4faw8")
+autoplay = true
+
+[node name="Pistons" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -107.237, 9.80806, 170.012)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h21to")
+
+[node name="Pistons2" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -107.237, 9.80806, 160.082)
+
+[node name="Gear" parent="." instance=ExtResource("10_7oam3")]
+transform = Transform3D(-8.74228e-08, -2, 0, -8.74228e-08, 3.82137e-15, -2, 2, -8.74228e-08, -8.74228e-08, -245.885, 39.7448, 183.39)
+
+[node name="Gear2" parent="." instance=ExtResource("10_7oam3")]
+transform = Transform3D(-3.20896e-07, -3.915, 4.12885e-08, -0.472286, 6.97977e-08, -1.94344, 1.94344, -6.29475e-07, -0.472286, -245.885, 22.9717, 145.35)
+crushAnimation = "spin_reverse"
+
+[node name="Gear3" parent="." instance=ExtResource("10_7oam3")]
+transform = Transform3D(2, 0, 0, 0, 21.62, 0, 0, 0, 2, -265.951, 0.387901, 187.25)
+crushAnimation = "spin_reverse"
+
+[node name="Gear4" parent="." instance=ExtResource("10_7oam3")]
+transform = Transform3D(2, 0, 0, 0, 21.62, 0, 0, 0, 2, -185.29, -14.3263, 110.522)
+crushAnimation = "spin_reverse"
+
+[node name="Gear5" parent="." instance=ExtResource("10_7oam3")]
+transform = Transform3D(2, 0, 0, 0, 21.62, 0, 0, 0, 2, -185.29, -14.3263, 214.683)
+
+[node name="Pistons3" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -187.631, 22.6423, 214.341)
+
+[node name="Pistons4" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -187.631, 22.6423, 107.357)
+
+[node name="Pistons5" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -366.499, 4.19085, 181.073)
+
+[node name="Pistons6" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -366.499, 4.19085, 162.115)
+
+[node name="Pistons7" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -366.499, 4.19085, 142.674)
+
+[node name="Checkpoint" type="Area3D" parent="."]
+transform = Transform3D(0.0377076, 0, -0.999289, 0, 1, 0, 0.999289, 0, 0.0377076, -420.864, -0.643867, 154.004)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint"]
+shape = SubResource("SphereShape3D_ig4xe")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3717, 10.5803, 0)
+size = Vector3(1, 22.1606, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4435, 10.5803, 0)
+size = Vector3(1, 22.1606, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54581, 20.9862, 0)
+size = Vector3(48.835, 1.34885, 1)
+
+[node name="Pistons8" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -547.677, 30.8112, 142.864)
+
+[node name="Pistons9" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -547.677, 30.8112, 123.906)
+
+[node name="Pistons10" parent="." instance=ExtResource("9_iinf7")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -547.677, 30.8112, 104.465)
+
+[node name="Gear6" parent="." instance=ExtResource("10_7oam3")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -856.953, 11.0353, 191.068)
+crushAnimation = "spin_slow"

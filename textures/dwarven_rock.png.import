@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmyq1ndc1dofi"
-path.s3tc="res://.godot/imported/wood.png-320746db63b5a5eb1bb7f02275994b36.s3tc.ctex"
+uid="uid://b7on4y6d0cgab"
+path.s3tc="res://.godot/imported/dwarven_rock.png-928b0f8aceb18398d16e10d774c33ffe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://wood.png"
-dest_files=["res://.godot/imported/wood.png-320746db63b5a5eb1bb7f02275994b36.s3tc.ctex"]
+source_file="res://textures/dwarven_rock.png"
+dest_files=["res://.godot/imported/dwarven_rock.png-928b0f8aceb18398d16e10d774c33ffe.s3tc.ctex"]
 
 [params]
 
