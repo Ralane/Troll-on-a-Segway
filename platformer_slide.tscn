@@ -17,11 +17,9 @@ size = Vector3(24, 1, 24)
 
 [node name="PlatformerSlide" type="Node3D"]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBody3D" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7461)
 physics_material_override = SubResource("PhysicsMaterial_4rwjs")
-freeze = true
-freeze_mode = 1
 script = ExtResource("1_1dr34")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]

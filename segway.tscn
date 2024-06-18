@@ -1,7 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwma3fu0sykaa"]
+[gd_scene load_steps=18 format=3 uid="uid://bwma3fu0sykaa"]
 
 [ext_resource type="Script" path="res://segway.gd" id="1_q07jy"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="2_vx0df"]
+[ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="3_onhwf"]
+[ext_resource type="AudioStream" uid="uid://wae6q8duuqf1" path="res://sfx/kenney_sci-fi-sounds/Audio/engineCircular_001.ogg" id="3_u0cgq"]
+[ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="5_p1nam"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="6_wj168"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egnib"]
 albedo_color = Color(0, 0, 0, 1)
@@ -26,6 +30,9 @@ albedo_color = Color(0.0886615, 0.229049, 0.215731, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jq2a5"]
 radius = 0.84304
 height = 2.82098
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bcyl"]
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufjwv"]
 albedo_color = Color(0.945098, 0, 0, 1)
@@ -140,19 +147,29 @@ transform = Transform3D(0.97931, 0.194084, -0.0572936, -0.162968, 0.924235, 0.34
 size = Vector3(0.104187, 2.27295, 0.174316)
 material = SubResource("StandardMaterial3D_8mxj3")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 0.894669, 0.446729, 0, -0.446729, 0.894669, 0.264639, 0.351178, -0.0934926)
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2"]
+transform = Transform3D(0.932311, -0.323563, -0.161563, 0.361657, 0.83411, 0.41649, 5.91434e-17, -0.446729, 0.894669, -0.265, 0.351, -0.0930001)
 size = Vector3(0.135723, 0.402104, 0.21283)
 material = SubResource("StandardMaterial3D_8mxj3")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 0.894669, 0.446729, 0, -0.446729, 0.894669, -0.265, 0.351, -0.093)
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2"]
+transform = Transform3D(0.873974, 0.458525, -0.161012, -0.361101, 0.834455, 0.416281, 0.325233, -0.305677, 0.894866, 0.265, 0.351, -0.0930001)
 size = Vector3(0.135723, 0.402104, 0.21283)
 material = SubResource("StandardMaterial3D_8mxj3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGCombiner3D/TrollBody"]
 transform = Transform3D(-4.37114e-08, -0.98376, 0.179489, 1, -4.30015e-08, 7.84572e-09, 0, 0.179489, 0.98376, -1.0516, -4.59671e-08, -1.06077)
 shape = SubResource("CapsuleShape3D_jq2a5")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/TrollBody"]
+transform = Transform3D(1, -1.55431e-15, 0, -1.55431e-15, 1, 0, 0, 0, 1, -1.81149, -0.177573, -0.66048)
+size = Vector3(0.0986328, 0.112427, 0.182617)
+material = SubResource("StandardMaterial3D_7bcyl")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/TrollBody"]
+transform = Transform3D(1, -1.55431e-15, 0, -1.55431e-15, 1, 0, 0, 0, 1, -1.811, 0.178, -0.66)
+size = Vector3(0.0986328, 0.112427, 0.182617)
+material = SubResource("StandardMaterial3D_7bcyl")
 
 [node name="SteeringStick" type="CSGCylinder3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.98376, 0.179489, 0, -0.179489, 0.98376, 0, 1.1573, 0.276556)
@@ -181,3 +198,51 @@ libraries = {
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152476, 0)
 target_position = Vector3(0, -2, 0)
+
+[node name="MotorSounds" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_u0cgq")
+max_db = 0.5
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="Marquee" type="Control" parent="Control/Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(273, 23)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_onhwf")
+script = ExtResource("5_p1nam")
+delay = 4.0
+lines = Array[String](["wasd or arow key control zoom scooter", "bring babie trolls h ome  pleaz", "cart full of babies  trols", "carful  not  kil babis", "wasd or arro kee move scooter", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd an darrow key make segway move", "7y80[9hnhy80[", "ow hurt  face  on key bord", "ignor last messag", "baby trolls need go home"])
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("6_wj168")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = -300.0
+offset_right = 150.0
+offset_bottom = 0.0
+grow_horizontal = 2
+joystick_mode = 1
+visibility_mode = 2

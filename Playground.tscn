@@ -1,43 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://gg5nnw8caoef"]
+[gd_scene load_steps=3 format=3 uid="uid://gg5nnw8caoef"]
 
-[ext_resource type="FontFile" uid="uid://bvraukf260twf" path="res://fonts/bybsy/bybsy-regular-webfont.ttf" id="1_is550"]
-[ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="4_nsmu3"]
-[ext_resource type="PackedScene" uid="uid://df2g2xcjrpb25" path="res://forest_racetrack.tscn" id="5_dqmuk"]
+[ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="1_r8j7u"]
 [ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="9_tixp3"]
-[ext_resource type="PackedScene" uid="uid://duv3pg8ieo0v5" path="res://racetrack.tscn" id="10_8ei8w"]
-[ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="11_sg01e"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqara"]
-sky_top_color = Color(0.342624, 0.407319, 0.78929, 1)
-sky_horizon_color = Color(0.844269, 0.558073, 0.65713, 1)
-sky_cover_modulate = Color(0.84235, 0.740574, 0.89393, 1)
-ground_bottom_color = Color(0.128755, 0.172008, 0.270854, 1)
-ground_horizon_color = Color(0.254521, 0.716338, 0.862235, 1)
-sun_angle_max = 16.2
-sun_curve = 1.11964
-
-[sub_resource type="Sky" id="Sky_vmkfx"]
-sky_material = SubResource("ProceduralSkyMaterial_yqara")
-
-[sub_resource type="Environment" id="Environment_l26cd"]
-background_mode = 2
-background_energy_multiplier = 1.82
-sky = SubResource("Sky_vmkfx")
-ambient_light_source = 3
-ambient_light_color = Color(0.867557, 0.925026, 0.98374, 1)
-ambient_light_sky_contribution = 0.98
-ambient_light_energy = 5.65
-reflected_light_source = 2
-tonemap_exposure = 0.49
-
-[sub_resource type="Theme" id="Theme_u732a"]
-Label/colors/font_outline_color = Color(0.948977, 0.891999, 0.856433, 1)
-Label/fonts/font = ExtResource("1_is550")
 
 [node name="Node3D" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_l26cd")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -58,26 +24,14 @@ size_flags_horizontal = 3
 
 [node name="Marquee" type="Control" parent="Control/Panel"]
 clip_contents = true
-custom_minimum_size = Vector2(298, 23)
+custom_minimum_size = Vector2(200, 23)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_u732a")
+theme = ExtResource("1_r8j7u")
 script = ExtResource("9_tixp3")
 delay = 4.0
-lines = Array[String](["wasd control zoom scooter", "baby trolls need go home", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd make segway move", "cart full of babis  trols", "carful  not  kil babis", "7y80[9hnhy80[", "ow hurt  face  on key bord", "ignor last messag", "wasd move scooter", "bring babie trolls h ome  pleaz"])
-
-[node name="Racetrack" parent="." instance=ExtResource("10_8ei8w")]
-transform = Transform3D(-0.0633827, 0, 0.997989, 0, 1, 0, -0.997989, 0, -0.0633827, 0, 0.208234, 11.4001)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_sg01e")
-autoplay = true
-
-[node name="ForestRacetrack" parent="." instance=ExtResource("5_dqmuk")]
-
-[node name="TrollCart" parent="." instance=ExtResource("4_nsmu3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64871, -26.354)
+lines = Array[String](["wasd control zoom scooter", "bring babie trolls h ome  pleaz", "cart full of babies  trols", "carful  not  kil babis", "wasd move scooter", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd make segway move", "7y80[9hnhy80[", "ow hurt  face  on key bord", "ignor last messag", "baby trolls need go home"])

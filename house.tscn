@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh1n0e1wcxk8v"]
+[gd_scene load_steps=3 format=3 uid="uid://dnaq24pf6syys"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sj34"]
 albedo_color = Color(0.439216, 0.192157, 0, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_4vd61"]
+radius = 22.034
+
 [node name="House" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.98981, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
 size = Vector3(10, 10, 10)
 material = SubResource("StandardMaterial3D_1sj34")
 
@@ -13,3 +18,12 @@ material = SubResource("StandardMaterial3D_1sj34")
 transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0, 3.58127, 0)
 size = Vector3(10, 10, 10)
 material = SubResource("StandardMaterial3D_1sj34")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_4vd61")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
