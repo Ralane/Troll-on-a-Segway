@@ -1,9 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ve1ncsa4cfd"]
+[gd_scene load_steps=16 format=3 uid="uid://0ve1ncsa4cfd"]
 
 [ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="1_2pkx3"]
 [ext_resource type="Texture2D" uid="uid://cbft5f5dsn0iq" path="res://placeholderBackground.PNG" id="2_w7til"]
 [ext_resource type="Script" path="res://LevelLoader.gd" id="3_5iin8"]
 [ext_resource type="Texture2D" uid="uid://bgmu6bdm3duyy" path="res://textures/play-button.svg" id="3_ovxk8"]
+[ext_resource type="Texture2D" uid="uid://rr1kcykx0xcd" path="res://textures/blank.png" id="5_f82c0"]
+[ext_resource type="Texture2D" uid="uid://bvj6gwqhrsth0" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/Arrow_Up_Key_Light.png" id="6_ln8qb"]
+[ext_resource type="Texture2D" uid="uid://ck4f855wt2q4d" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/Arrow_Left_Key_Light.png" id="7_h7q78"]
+[ext_resource type="Texture2D" uid="uid://b483vnwxnrmic" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/Arrow_Down_Key_Light.png" id="8_xp5mr"]
+[ext_resource type="Texture2D" uid="uid://c0esmfe6seapj" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/Arrow_Right_Key_Light.png" id="9_kpvkd"]
+[ext_resource type="Texture2D" uid="uid://bospvgsed3yk6" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/W_Key_Light.png" id="10_0w3ry"]
+[ext_resource type="Texture2D" uid="uid://bdjrgkw6k5ax2" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/A_Key_Light.png" id="11_cybn3"]
+[ext_resource type="Texture2D" uid="uid://ck8u38tm53cyd" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/S_Key_Light.png" id="12_a8tfn"]
+[ext_resource type="Texture2D" uid="uid://jglbp7mtn44i" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/D_Key_Light.png" id="13_cn0j3"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="14_bcis3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k8h3w"]
 font_size = 64
@@ -96,23 +106,126 @@ expand_icon = true
 script = ExtResource("3_5iin8")
 levelToLoad = "res://levels/lvl_3_dwarven_caverns.tscn"
 
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(16, 48)
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Credits" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FlowContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ArrowKeys" type="GridContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer"]
+layout_mode = 2
+theme = ExtResource("1_2pkx3")
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/ArrowKeys"]
+layout_mode = 2
+texture = ExtResource("5_f82c0")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/ArrowKeys"]
+layout_mode = 2
+texture = ExtResource("6_ln8qb")
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/ArrowKeys"]
+layout_mode = 2
+texture = ExtResource("5_f82c0")
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/ArrowKeys"]
+layout_mode = 2
+texture = ExtResource("7_h7q78")
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/ArrowKeys"]
+layout_mode = 2
+texture = ExtResource("8_xp5mr")
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/ArrowKeys"]
+layout_mode = 2
+texture = ExtResource("9_kpvkd")
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer"]
+layout_mode = 2
+theme = ExtResource("1_2pkx3")
+
+[node name="WASD" type="GridContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/WASD"]
+layout_mode = 2
+texture = ExtResource("5_f82c0")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/WASD"]
+layout_mode = 2
+texture = ExtResource("10_0w3ry")
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/WASD"]
+layout_mode = 2
+texture = ExtResource("5_f82c0")
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/WASD"]
+layout_mode = 2
+texture = ExtResource("11_cybn3")
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/WASD"]
+layout_mode = 2
+texture = ExtResource("12_a8tfn")
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer/WASD"]
+layout_mode = 2
+texture = ExtResource("13_cn0j3")
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer"]
+layout_mode = 2
+theme = ExtResource("1_2pkx3")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/MarginContainer/FlowContainer"]
+layout_mode = 2
+texture = ExtResource("14_bcis3")
+expand_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Credits
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_2pkx3")
 bbcode_enabled = true
-text = "Credits:
-
-0rangeYouGlad (Programming, 3d \"modeling\", level design)
+text = "0rangeYouGlad (Programming, 3d \"modeling\", level design)
 Caznix (Music, sound effects, level design)
 
 Assets used:
@@ -124,4 +237,5 @@ https://www.fontsquirrel.com/fonts/ritaglio
 https://polyhaven.com/a/garden_gnome
 https://kenney.nl/assets/sci-fi-sounds
 https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot
-https://game-icons.net/1x1/guard13007/play-button.html"
+https://game-icons.net/1x1/guard13007/play-button.html
+https://thoseawesomeguys.com/prompts/"

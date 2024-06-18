@@ -245,4 +245,4 @@ offset_right = 150.0
 offset_bottom = 0.0
 grow_horizontal = 2
 joystick_mode = 1
-visibility_mode = 1
+visibility_mode = 2
