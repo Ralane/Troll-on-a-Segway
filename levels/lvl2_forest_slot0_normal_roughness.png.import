@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6n0tlsuq52rr"
 path.s3tc="res://.godot/imported/lvl2_forest_slot0_normal_roughness.png-7e24de053d327bd7b6328dd8c47f0e45.s3tc.ctex"
+path.etc2="res://.godot/imported/lvl2_forest_slot0_normal_roughness.png-7e24de053d327bd7b6328dd8c47f0e45.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://levels/lvl2_forest_slot0_normal_roughness.png"
-dest_files=["res://.godot/imported/lvl2_forest_slot0_normal_roughness.png-7e24de053d327bd7b6328dd8c47f0e45.s3tc.ctex"]
+dest_files=["res://.godot/imported/lvl2_forest_slot0_normal_roughness.png-7e24de053d327bd7b6328dd8c47f0e45.s3tc.ctex", "res://.godot/imported/lvl2_forest_slot0_normal_roughness.png-7e24de053d327bd7b6328dd8c47f0e45.etc2.ctex"]
 
 [params]
 

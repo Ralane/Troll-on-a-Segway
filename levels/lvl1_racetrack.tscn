@@ -32,6 +32,8 @@ sky_material = SubResource("ProceduralSkyMaterial_bach3")
 background_mode = 2
 background_energy_multiplier = 1.82
 sky = SubResource("Sky_eu75k")
+ambient_light_source = 3
+reflected_light_source = 2
 
 [node name="Node3D" type="Node3D"]
 

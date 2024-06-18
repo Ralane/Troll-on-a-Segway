@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2hyiaca2j8bl"
 path.s3tc="res://.godot/imported/Playground_slot0_albedo_bump.png-b598db86e74587c2d7a4ea62b0fb52ab.s3tc.ctex"
+path.etc2="res://.godot/imported/Playground_slot0_albedo_bump.png-b598db86e74587c2d7a4ea62b0fb52ab.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Playground_slot0_albedo_bump.png"
-dest_files=["res://.godot/imported/Playground_slot0_albedo_bump.png-b598db86e74587c2d7a4ea62b0fb52ab.s3tc.ctex"]
+dest_files=["res://.godot/imported/Playground_slot0_albedo_bump.png-b598db86e74587c2d7a4ea62b0fb52ab.s3tc.ctex", "res://.godot/imported/Playground_slot0_albedo_bump.png-b598db86e74587c2d7a4ea62b0fb52ab.etc2.ctex"]
 
 [params]
 
