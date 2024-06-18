@@ -82,7 +82,7 @@ levelToLoad = "res://levels/lvl_3_dwarven_caverns.tscn"
 [node name="Panel" type="Panel" parent="MarginContainer/HSplitContainer/VSplitContainer"]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HSplitContainer/VSplitContainer/Panel"]
+[node name="Credits" type="RichTextLabel" parent="MarginContainer/HSplitContainer/VSplitContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,4 +103,5 @@ https://github.com/Zylann/godot_heightmap_plugin
 https://github.com/markeel/godot-marquee
 https://www.fontsquirrel.com/fonts/ritaglio
 https://polyhaven.com/a/garden_gnome
-https://kenney.nl/assets/sci-fi-sounds"
+https://kenney.nl/assets/sci-fi-sounds
+https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot"

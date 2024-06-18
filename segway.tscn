@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bwma3fu0sykaa"]
+[gd_scene load_steps=18 format=3 uid="uid://bwma3fu0sykaa"]
 
 [ext_resource type="Script" path="res://segway.gd" id="1_q07jy"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="2_vx0df"]
 [ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="3_onhwf"]
 [ext_resource type="AudioStream" uid="uid://wae6q8duuqf1" path="res://sfx/kenney_sci-fi-sounds/Audio/engineCircular_001.ogg" id="3_u0cgq"]
 [ext_resource type="Script" path="res://addons/marquee/marquee.gd" id="5_p1nam"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="6_wj168"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egnib"]
 albedo_color = Color(0, 0, 0, 1)
@@ -233,3 +234,15 @@ theme = ExtResource("3_onhwf")
 script = ExtResource("5_p1nam")
 delay = 4.0
 lines = Array[String](["wasd or arow key control zoom scooter", "bring babie trolls h ome  pleaz", "cart full of babies  trols", "carful  not  kil babis", "wasd or arro kee move scooter", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd an darrow key make segway move", "7y80[9hnhy80[", "ow hurt  face  on key bord", "ignor last messag", "baby trolls need go home"])
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("6_wj168")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = -300.0
+offset_right = 150.0
+offset_bottom = 0.0
+grow_horizontal = 2
+joystick_mode = 1
+visibility_mode = 1
