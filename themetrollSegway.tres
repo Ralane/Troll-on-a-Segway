@@ -6,6 +6,7 @@
 bg_color = Color(0.509804, 0.654902, 0.333333, 0.423529)
 
 [resource]
+Button/font_sizes/font_size = 48
 Button/fonts/font = ExtResource("1_d3jah")
 Label/colors/font_outline_color = Color(0.948977, 0.891999, 0.856433, 1)
 Label/fonts/font = ExtResource("1_d3jah")

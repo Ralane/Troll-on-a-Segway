@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://0ve1ncsa4cfd"]
+[gd_scene load_steps=6 format=3 uid="uid://0ve1ncsa4cfd"]
 
 [ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="1_2pkx3"]
 [ext_resource type="Texture2D" uid="uid://cbft5f5dsn0iq" path="res://placeholderBackground.PNG" id="2_w7til"]
 [ext_resource type="Script" path="res://LevelLoader.gd" id="3_5iin8"]
+[ext_resource type="Texture2D" uid="uid://bgmu6bdm3duyy" path="res://textures/play-button.svg" id="3_ovxk8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k8h3w"]
-font_size = 32
+font_size = 64
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,51 +39,69 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2pkx3")
 
-[node name="HSplitContainer" type="VSplitContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-collapsed = true
-dragger_visibility = 2
 
-[node name="MenuTitle" type="Label" parent="MarginContainer/HSplitContainer"]
+[node name="MenuTitle" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("1_2pkx3")
 text = "TROLL ON A SEGWAY"
 label_settings = SubResource("LabelSettings_k8h3w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/HSplitContainer"]
-layout_mode = 2
-dragger_visibility = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer/VSplitContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Lvl1" type="Button" parent="MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Lvl1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.35
 theme = ExtResource("1_2pkx3")
 text = "level 1: real racetrak"
+icon = ExtResource("3_ovxk8")
+alignment = 0
+expand_icon = true
 script = ExtResource("3_5iin8")
 levelToLoad = "res://levels/lvl1_racetrack.tscn"
 
-[node name="Lvl2" type="Button" parent="MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
+[node name="Lvl2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.35
 theme = ExtResource("1_2pkx3")
 text = "level 2: floaty forest"
+icon = ExtResource("3_ovxk8")
+alignment = 0
+expand_icon = true
 script = ExtResource("3_5iin8")
 levelToLoad = "res://levels/lvl2_forest.tscn"
 
-[node name="Lvl3" type="Button" parent="MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
+[node name="Lvl3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.35
 theme = ExtResource("1_2pkx3")
 text = "level 3: dorf danger"
+icon = ExtResource("3_ovxk8")
+alignment = 0
+expand_icon = true
 script = ExtResource("3_5iin8")
 levelToLoad = "res://levels/lvl_3_dwarven_caverns.tscn"
 
-[node name="Panel" type="Panel" parent="MarginContainer/HSplitContainer/VSplitContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 48)
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Credits" type="RichTextLabel" parent="MarginContainer/HSplitContainer/VSplitContainer/Panel"]
+[node name="Credits" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,4 +123,5 @@ https://github.com/markeel/godot-marquee
 https://www.fontsquirrel.com/fonts/ritaglio
 https://polyhaven.com/a/garden_gnome
 https://kenney.nl/assets/sci-fi-sounds
-https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot"
+https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot
+https://game-icons.net/1x1/guard13007/play-button.html"
