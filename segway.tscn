@@ -205,6 +205,7 @@ max_db = 0.5
 autoplay = true
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -236,13 +237,13 @@ delay = 4.0
 lines = Array[String](["wasd or arow key control zoom scooter", "bring babie trolls h ome  pleaz", "cart full of babies  trols", "carful  not  kil babis", "wasd or arro kee move scooter", "u r stronk troll", "brimg changelins to bilding", "troll togeder stronk", "wasd an darrow key make segway move", "7y80[9hnhy80[", "ow hurt  face  on key bord", "ignor last messag", "baby trolls need go home"])
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("6_wj168")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = -300.0
-offset_right = 150.0
+anchors_preset = 15
+anchor_top = 0.0
+anchor_right = 1.0
+offset_top = 0.0
+offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
+grow_vertical = 2
 joystick_mode = 1
 visibility_mode = 2
