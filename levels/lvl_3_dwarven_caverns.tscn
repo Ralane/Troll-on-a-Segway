@@ -89,6 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -678.746, 2.89603, 714.221)
 
 [node name="TrollCart" parent="." instance=ExtResource("6_1m4n1")]
 transform = Transform3D(0.0133165, 0, -0.999911, 0, 1, 0, 0.999911, 0, 0.0133165, 16.9043, -0.356716, 136.91)
+nextLevelToLoad = "res://levels/lvl_4_hell.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_4faw8")

@@ -89,7 +89,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.35
 theme = ExtResource("1_2pkx3")
-text = "level 2: floaty forest"
+text = "level 2: floaty fairy forest"
 icon = ExtResource("3_ovxk8")
 alignment = 0
 expand_icon = true
@@ -101,12 +101,24 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.35
 theme = ExtResource("1_2pkx3")
-text = "level 3: dorf danger"
+text = "level 3: dorfen danger cave"
 icon = ExtResource("3_ovxk8")
 alignment = 0
 expand_icon = true
 script = ExtResource("3_5iin8")
 levelToLoad = "res://levels/lvl_3_dwarven_caverns.tscn"
+
+[node name="Lvl4" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.35
+theme = ExtResource("1_2pkx3")
+text = "level 4: big winar carnival"
+icon = ExtResource("3_ovxk8")
+alignment = 0
+expand_icon = true
+script = ExtResource("3_5iin8")
+levelToLoad = "res://levels/lvl_4_hell.tscn"
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

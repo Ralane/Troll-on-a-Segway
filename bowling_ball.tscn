@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmqycpln4pa55"]
+
+[ext_resource type="Script" path="res://bowling_ball.gd" id="1_2nmev"]
+[ext_resource type="AudioStream" uid="uid://6knw6imfo8ih" path="res://sfx/kenney_sci-fi-sounds/Audio/thrusterFire_000.ogg" id="2_on805"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80ke5"]
+friction = 0.05
+rough = true
+bounce = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_me16v"]
+radius = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvwmw"]
+shading_mode = 2
+diffuse_mode = 1
+specular_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_kgnoj"]
+material = SubResource("StandardMaterial3D_wvwmw")
+radius = 5.0
+height = 10.0
+
+[node name="BowlingBall" type="RigidBody3D"]
+collision_layer = 2049
+collision_mask = 2049
+mass = 333.0
+physics_material_override = SubResource("PhysicsMaterial_80ke5")
+gravity_scale = 10.0
+script = ExtResource("1_2nmev")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_me16v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_kgnoj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_on805")
+autoplay = true
+doppler_tracking = 1

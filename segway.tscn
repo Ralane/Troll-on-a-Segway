@@ -147,6 +147,11 @@ transform = Transform3D(0.97931, 0.194084, -0.0572936, -0.162968, 0.924235, 0.34
 size = Vector3(0.104187, 2.27295, 0.174316)
 material = SubResource("StandardMaterial3D_8mxj3")
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2/CSGBox3D"]
+transform = Transform3D(1, 9.33774e-15, 1.48116e-14, 2.4487e-15, 0.763029, -0.646364, -1.73372e-14, 0.646364, 0.763029, -1.24282e-14, -0.3397, -0.541518)
+size = Vector3(0.09, 0.697266, 0.118286)
+material = SubResource("StandardMaterial3D_8mxj3")
+
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/TrollBody/CSGBox3D2"]
 transform = Transform3D(0.932311, -0.323563, -0.161563, 0.361657, 0.83411, 0.41649, 5.91434e-17, -0.446729, 0.894669, -0.265, 0.351, -0.0930001)
 size = Vector3(0.135723, 0.402104, 0.21283)
