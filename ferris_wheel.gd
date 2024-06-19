@@ -2,7 +2,7 @@ extends AnimatableBody3D
 
 var time = 0;
 var distance = 50;
-var timeScale = 0.12;
+var timeScale = 0.10;
 @export var offset = 0.0;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
