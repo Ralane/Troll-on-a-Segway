@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv3t0mtsb3gda"]
+[gd_scene load_steps=9 format=3 uid="uid://bv3t0mtsb3gda"]
 
 [ext_resource type="Script" path="res://ferris_wheel.gd" id="1_8slkf"]
+[ext_resource type="Texture2D" uid="uid://bmyq1ndc1dofi" path="res://wood.png" id="2_5ns1c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mr5rb"]
 rough = true
@@ -12,7 +13,11 @@ size = Vector3(32, 1, 24)
 [sub_resource type="BoxShape3D" id="BoxShape3D_grw3h"]
 size = Vector3(32, 1, 1.118)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0skjh"]
+albedo_texture = ExtResource("2_5ns1c")
+
 [sub_resource type="BoxMesh" id="BoxMesh_3dxfw"]
+material = SubResource("StandardMaterial3D_0skjh")
 size = Vector3(32, 1, 24)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_otw1n"]

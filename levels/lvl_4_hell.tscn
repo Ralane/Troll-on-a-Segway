@@ -51,7 +51,7 @@ radius = 35.013
 [node name="lvl4_sisyphean_hell" type="Node3D"]
 
 [node name="House" parent="." instance=ExtResource("1_gegmv")]
-transform = Transform3D(0.213508, 0, 0.976941, 0, 1, 0, -0.976941, 0, 0.213508, -861.3, 96.064, 227.556)
+transform = Transform3D(-0.586666, 0.137569, 0.798059, 0.200641, 0.979432, -0.0213404, -0.78458, 0.147603, -0.602201, -861.3, 99.797, 227.556)
 
 [node name="TrollCart" parent="." instance=ExtResource("2_1w6ri")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1082.13, -48.802, 0)
@@ -399,15 +399,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 mesh = SubResource("CylinderMesh_4sdyy")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="."]
-transform = Transform3D(0.99106, 0.133415, 0, -0.133415, 0.99106, 0, 0, 0, 1, -200.238, 5.55584, -0.0152588)
+transform = Transform3D(0.99106, 0.133415, 0, -0.133415, 0.99106, 0, 0, 0, 1, -190.686, 4.26999, -0.0152588)
 use_collision = true
-size = Vector3(1458.5, 2, 112)
+size = Vector3(1477.77, 2, 112)
 material = SubResource("StandardMaterial3D_7nsb0")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="."]
 transform = Transform3D(0.99106, 0.133415, 0, -0.133415, 0.99106, 0, 0, 0, 1, -869.743, 95.6838, 144.339)
 use_collision = true
 size = Vector3(107.408, 2, 209.689)
+material = SubResource("StandardMaterial3D_7nsb0")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6678, 2.60931, 0)
+use_collision = true
+size = Vector3(5.76642, 4.94678, 209.689)
+material = SubResource("StandardMaterial3D_7nsb0")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8821, 1.48064, 0)
+use_collision = true
+size = Vector3(5.76642, 4.94678, 209.689)
+material = SubResource("StandardMaterial3D_7nsb0")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000183105, 1.76247, 102.97)
+use_collision = true
+size = Vector3(107.408, 5.5249, 3.74988)
 material = SubResource("StandardMaterial3D_7nsb0")
 
 [node name="Checkpoint" type="Area3D" parent="."]
