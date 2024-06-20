@@ -1,12 +1,16 @@
-[gd_scene load_steps=31 format=3 uid="uid://clj8vxclpwva1"]
+[gd_scene load_steps=35 format=3 uid="uid://clj8vxclpwva1"]
 
 [ext_resource type="Script" path="res://troll_cart.gd" id="1_cixs5"]
 [ext_resource type="PackedScene" uid="uid://bwma3fu0sykaa" path="res://segway.tscn" id="2_83k7x"]
 [ext_resource type="Script" path="res://truck.gd" id="2_wnij2"]
 [ext_resource type="FontFile" uid="uid://dj3wx0xqesym" path="res://fonts/ritaglio/Ritaglio.ttf" id="3_oi7ed"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="4_eq804"]
+[ext_resource type="AudioStream" uid="uid://cj7vu2oxn4ueb" path="res://sfx/kenney_digital-audio/Audio/threeTone2.ogg" id="4_p41pl"]
+[ext_resource type="AudioStream" uid="uid://3inq61g3lkv0" path="res://sfx/kenney_digital-audio/Audio/tone1.ogg" id="5_1gn6p"]
 [ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="5_pc2ft"]
+[ext_resource type="AudioStream" uid="uid://bdwvoi8wui5ya" path="res://sfx/kenney_digital-audio/Audio/powerUp12.ogg" id="5_rd1wl"]
 [ext_resource type="Script" path="res://TimerLabel.gd" id="6_5hsgr"]
+[ext_resource type="AudioStream" uid="uid://82fvvhkeufs3" path="res://sfx/kenney_digital-audio/Audio/zapThreeToneDown.ogg" id="6_uiacd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8fkrq"]
 size = Vector3(5, 1, 7)
@@ -139,10 +143,25 @@ tracks/2/keys = {
 "update": 1,
 "values": ["chekpont!"]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CheckpointSound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_p41pl")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_hm8sk"]
 resource_name = "gameOverCntdown"
-length = 6.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -186,13 +205,40 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(6),
+"times": PackedFloat32Array(4.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"failure"
 }]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CheckpointSound")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_1gn6p")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_1gn6p")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_1gn6p")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_uiacd")
+}],
+"times": PackedFloat32Array(0, 1, 2, 2.9)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_0oloq"]
 resource_name = "gameWin"
@@ -273,6 +319,21 @@ tracks/5/keys = {
 "method": &"pause"
 }]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../CheckpointSound")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_rd1wl")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lrmgb"]
 _data = {
@@ -392,7 +453,7 @@ no_depth_test = true
 fixed_size = true
 modulate = Color(1, 1, 1, 0)
 outline_modulate = Color(0, 0, 0, 0)
-text = "u ar winur! :)"
+text = "chekpont!"
 font = ExtResource("3_oi7ed")
 uppercase = true
 
@@ -499,6 +560,8 @@ angular_damp = 22.255
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63486, 0.27065)
 node_a = NodePath("../RigidBody3D")
 node_b = NodePath("../Node3D")
+
+[node name="CheckpointSound" type="AudioStreamPlayer" parent="."]
 
 [connection signal="area_entered" from="RigidBody3D/Area3D" to="RigidBody3D" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="RigidBody3D/WinDetector" to="RigidBody3D" method="_on_win_detector_area_entered"]
