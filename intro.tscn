@@ -96,7 +96,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3pb3q")
+}
+script = ExtResource("6_sb8ar")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.45)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,54 +113,87 @@ grow_vertical = 2
 color = Color(0.988235, 0.960784, 0.976471, 1)
 
 [node name="1" type="TextureRect" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -8.0
-offset_top = -20.0
-offset_right = 446.0
-offset_bottom = 312.0
+modulate = Color(1, 1, 1, 0.45)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.0
+offset_top = -329.0
+offset_right = -67.2644
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_vu5k7")
 expand_mode = 3
 
 [node name="2" type="TextureRect" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -8.0
-offset_top = 281.0
-offset_right = 346.411
-offset_bottom = 457.0
+modulate = Color(1, 1, 1, 0.45)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -559.0
+offset_top = -36.0
+offset_right = -204.589
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_0py5u")
 expand_mode = 3
 
 [node name="3" type="TextureRect" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -2.0
-offset_top = 443.0
-offset_right = 355.377
-offset_bottom = 648.0
+modulate = Color(1, 1, 1, 0.45)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.0
+offset_top = 124.0
+offset_right = -211.623
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_ajrgm")
 expand_mode = 3
 
 [node name="4" type="TextureRect" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 407.0
-offset_top = 1.0
-offset_right = 1123.0
-offset_bottom = 450.0
+modulate = Color(1, 1, 1, 0.45)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -340.0
+offset_right = 589.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_3oxdf")
 expand_mode = 3
 
 [node name="5" type="TextureRect" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 434.0
-offset_top = 300.0
-offset_right = 1257.0
-offset_bottom = 643.0
+modulate = Color(1, 1, 1, 0.45)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -67.0
+offset_right = 716.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 0.127409
 texture = ExtResource("5_e6p05")
 expand_mode = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_3pb3q")
-}
-script = ExtResource("6_sb8ar")
