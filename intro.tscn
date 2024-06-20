@@ -1,0 +1,159 @@
+[gd_scene load_steps=9 format=3 uid="uid://c251xc563vmpt"]
+
+[ext_resource type="Texture2D" uid="uid://dl433m1uvtq4n" path="res://textures/intro/image1.png" id="1_vu5k7"]
+[ext_resource type="Texture2D" uid="uid://dsnfeobq5sxno" path="res://textures/intro/image2.png" id="2_0py5u"]
+[ext_resource type="Texture2D" uid="uid://48k4oqv6f6y1" path="res://textures/intro/image3.png" id="3_ajrgm"]
+[ext_resource type="Texture2D" uid="uid://cxfi87umlq388" path="res://textures/intro/image4.png" id="4_3oxdf"]
+[ext_resource type="Texture2D" uid="uid://culsuwwskqnlo" path="res://textures/intro/image5.png" id="5_e6p05"]
+[ext_resource type="Script" path="res://AnimationPlayer.gd" id="6_sb8ar"]
+
+[sub_resource type="Animation" id="Animation_m6dla"]
+resource_name = "intro"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 14, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 4, 14, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 6, 14, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7, 8, 14, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 9, 10, 14, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(14, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3pb3q"]
+_data = {
+"intro": SubResource("Animation_m6dla")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988235, 0.960784, 0.976471, 1)
+
+[node name="1" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 446.0
+offset_bottom = 312.0
+texture = ExtResource("1_vu5k7")
+expand_mode = 3
+
+[node name="2" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -8.0
+offset_top = 281.0
+offset_right = 346.411
+offset_bottom = 457.0
+texture = ExtResource("2_0py5u")
+expand_mode = 3
+
+[node name="3" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -2.0
+offset_top = 443.0
+offset_right = 355.377
+offset_bottom = 648.0
+texture = ExtResource("3_ajrgm")
+expand_mode = 3
+
+[node name="4" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 407.0
+offset_top = 1.0
+offset_right = 1123.0
+offset_bottom = 450.0
+texture = ExtResource("4_3oxdf")
+expand_mode = 3
+
+[node name="5" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 434.0
+offset_top = 300.0
+offset_right = 1257.0
+offset_bottom = 643.0
+rotation = 0.127409
+texture = ExtResource("5_e6p05")
+expand_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3pb3q")
+}
+script = ExtResource("6_sb8ar")

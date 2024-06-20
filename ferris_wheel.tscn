@@ -43,7 +43,6 @@ sides = 16
 material = SubResource("StandardMaterial3D_lnj6m")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 operation = 2
 radius = 60.0
 height = 3.0
