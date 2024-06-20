@@ -18,4 +18,4 @@ func _process(delta):
 		var ball = bowlingBall.instantiate();
 		add_child(ball);
 		ball.top_level = true;
-		ball.global_position = global_position;
+		ball.global_position = $MeshInstance3D.global_position;

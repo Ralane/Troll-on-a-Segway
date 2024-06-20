@@ -112,6 +112,7 @@ grow_vertical = 2
 color = Color(0.988235, 0.960784, 0.976471, 1)
 
 [node name="1" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -128,6 +129,7 @@ texture = ExtResource("1_vu5k7")
 expand_mode = 3
 
 [node name="2" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,6 +146,7 @@ texture = ExtResource("2_0py5u")
 expand_mode = 3
 
 [node name="3" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -160,6 +163,7 @@ texture = ExtResource("3_ajrgm")
 expand_mode = 3
 
 [node name="4" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -176,6 +180,7 @@ texture = ExtResource("4_3oxdf")
 expand_mode = 3
 
 [node name="5" type="TextureRect" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -562,6 +562,7 @@ node_a = NodePath("../RigidBody3D")
 node_b = NodePath("../Node3D")
 
 [node name="CheckpointSound" type="AudioStreamPlayer" parent="."]
+volume_db = -3.0
 
 [connection signal="area_entered" from="RigidBody3D/Area3D" to="RigidBody3D" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="RigidBody3D/WinDetector" to="RigidBody3D" method="_on_win_detector_area_entered"]
