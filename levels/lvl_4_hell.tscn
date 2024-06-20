@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://d16d3dkupxf7"]
+[gd_scene load_steps=15 format=3 uid="uid://d16d3dkupxf7"]
 
 [ext_resource type="PackedScene" uid="uid://dnaq24pf6syys" path="res://house.tscn" id="1_gegmv"]
 [ext_resource type="PackedScene" uid="uid://vg1ksli43ixj" path="res://ferris_wheel.tscn" id="1_uwnfw"]
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_w35ua"]
 [ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="2_1w6ri"]
-[ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="3_lbief"]
 [ext_resource type="Script" path="res://BallRespawner.gd" id="5_qdu8a"]
 [ext_resource type="PackedScene" uid="uid://cr1fwmwnniof1" path="res://bumper_pin.tscn" id="6_cq10w"]
 
@@ -59,10 +58,6 @@ nextLevelToLoad = "res://levels/lvl_3_dwarven_caverns.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ceq2l")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_lbief")
-autoplay = true
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="."]
 transform = Transform3D(0.998234, 0.0594109, 0, -0.0594109, 0.998234, 0, 0, 0, 1, 1180.24, -19.2604, -61.0401)

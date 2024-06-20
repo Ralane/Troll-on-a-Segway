@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://batjlbssmunf4"]
+
+[ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="1_q2cc2"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_q2cc2")
+autoplay = true

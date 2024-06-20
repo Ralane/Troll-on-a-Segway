@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://duv3pg8ieo0v5"]
+[gd_scene load_steps=12 format=3 uid="uid://duv3pg8ieo0v5"]
 
 [ext_resource type="Texture2D" uid="uid://m456vgoh2yp8" path="res://asphalt.png" id="1_aw1gl"]
 [ext_resource type="PackedScene" uid="uid://cws60xsxx84fo" path="res://spinny_boi.tscn" id="2_ymb5n"]
 [ext_resource type="PackedScene" uid="uid://dnaq24pf6syys" path="res://house.tscn" id="4_auiot"]
 [ext_resource type="Script" path="res://BabyDeleter.gd" id="4_ikoxi"]
 [ext_resource type="PackedScene" uid="uid://clj8vxclpwva1" path="res://troll_cart.tscn" id="5_piigh"]
-[ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="6_2snbt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftmo2"]
 albedo_texture = ExtResource("1_aw1gl")
@@ -279,7 +278,3 @@ transform = Transform3D(0.166717, 0, 0.986005, 0, 1, 0, -0.986005, 0, 0.166717, 
 use_collision = true
 size = Vector3(76.0981, 5.39703, 5.69054)
 material = SubResource("StandardMaterial3D_ftmo2")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_2snbt")
-autoplay = true

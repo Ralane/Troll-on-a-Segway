@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://0ve1ncsa4cfd"]
+[gd_scene load_steps=17 format=3 uid="uid://0ve1ncsa4cfd"]
 
 [ext_resource type="Theme" uid="uid://ds3wt0k53v7ra" path="res://themetrollSegway.tres" id="1_2pkx3"]
 [ext_resource type="Texture2D" uid="uid://cbft5f5dsn0iq" path="res://placeholderBackground.PNG" id="2_w7til"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://jglbp7mtn44i" path="res://textures/Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Light/D_Key_Light.png" id="13_cn0j3"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="14_bcis3"]
 [ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="14_wub7c"]
-[ext_resource type="AudioStream" uid="uid://cq3k7yr6qj1fm" path="res://goblin.ogg" id="16_lsekr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k8h3w"]
 font_size = 64
@@ -282,7 +281,3 @@ https://kenney.nl/assets/sci-fi-sounds
 https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot
 https://game-icons.net/1x1/guard13007/play-button.html
 https://thoseawesomeguys.com/prompts/"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_lsekr")
-autoplay = true
