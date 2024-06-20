@@ -54,7 +54,7 @@ transform = Transform3D(-0.586666, 0.137569, 0.798059, 0.200641, 0.979432, -0.02
 
 [node name="TrollCart" parent="." instance=ExtResource("2_1w6ri")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1174.43, -19.5171, -61.0248)
-nextLevelToLoad = "res://levels/lvl_3_dwarven_caverns.tscn"
+nextLevelToLoad = "res://mainMenu.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ceq2l")
